@@ -2,9 +2,24 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { NAV_LINKS, PHONE } from "@/lib/site-config";
+import { PHONE } from "@/lib/site-config";
 
-export function MobileNav() {
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+export function MobileNav({
+  links,
+  labels,
+}: {
+  links: readonly NavLink[];
+  labels: {
+    open: string;
+    close: string;
+    mobile: string;
+  };
+}) {
   const [open, setOpen] = useState(false);
   const burgerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -35,7 +50,7 @@ export function MobileNav() {
       <button
         ref={burgerRef}
         type="button"
-        aria-label="Otvori meni"
+        aria-label={labels.open}
         aria-expanded={open}
         aria-controls="glavni-meni"
         onClick={() => setOpen(true)}
@@ -58,7 +73,7 @@ export function MobileNav() {
           <button
             ref={closeRef}
             type="button"
-            aria-label="Zatvori meni"
+            aria-label={labels.close}
             onClick={() => setOpen(false)}
             className="flex size-[46px] items-center justify-center border border-white/35 font-display text-2xl leading-none text-white"
           >
@@ -66,11 +81,8 @@ export function MobileNav() {
           </button>
         </div>
 
-        <nav
-          aria-label="Mobilna navigacija"
-          className="mt-9 flex flex-col"
-        >
-          {NAV_LINKS.map((link) => (
+        <nav aria-label={labels.mobile} className="mt-9 flex flex-col">
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}

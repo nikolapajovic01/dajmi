@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Barlow } from "next/font/google";
-import { SITE } from "@/lib/site-config";
+import { getDictionary, htmlLang } from "@/lib/i18n/locale";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -15,14 +15,23 @@ const barlow = Barlow({
   weight: ["400", "500", "600"],
 });
 
-export const metadata: Metadata = {
-  title: SITE.title,
-  description: SITE.description,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { dict } = await getDictionary();
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+  };
+}
+
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const { locale } = await getDictionary();
+
   return (
-    <html lang={SITE.locale} className={`${archivo.variable} ${barlow.variable}`}>
+    <html
+      lang={htmlLang(locale)}
+      className={`${archivo.variable} ${barlow.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
