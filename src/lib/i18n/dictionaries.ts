@@ -113,6 +113,8 @@ const cnr = {
     explore: "Istražite prostor iz prve ruke",
     interactive: "Interaktivni prikaz",
     fullscreen: "Prikaz preko cijelog ekrana",
+    enterFullscreen: "Cijeli ekran",
+    exitFullscreen: "Zatvori cijeli ekran",
   },
   cta: {
     kicker: "Herceg Novi",
@@ -260,6 +262,8 @@ const en = {
     explore: "Explore the space first-hand",
     interactive: "Interactive view",
     fullscreen: "Fullscreen available",
+    enterFullscreen: "Fullscreen",
+    exitFullscreen: "Close fullscreen",
   },
   cta: {
     kicker: "Herceg Novi",

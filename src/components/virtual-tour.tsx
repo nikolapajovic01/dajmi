@@ -1,13 +1,54 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 const TOUR_URL = "https://virtualtours.virtualno360.hr/F1OToQMXMv";
 
 export function VirtualTour({ copy }: { copy: Dictionary["tour"] }) {
+  const frameRef = useRef<HTMLDivElement>(null);
   const [isStarted, setIsStarted] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    if (!isFullscreen) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsFullscreen(false);
+      }
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isFullscreen]);
+
+  function startTour() {
+    setIsStarted(true);
+
+    if (window.matchMedia("(max-width: 820px)").matches) {
+      setIsFullscreen(true);
+    }
+  }
+
+  function enterFullscreen() {
+    setIsFullscreen(true);
+  }
+
+  function exitFullscreen() {
+    setIsFullscreen(false);
+  }
 
   return (
     <section
@@ -31,7 +72,14 @@ export function VirtualTour({ copy }: { copy: Dictionary["tour"] }) {
         </p>
       </div>
 
-      <div className="relative mt-8 aspect-[4/5] overflow-hidden border border-navy/12 bg-[#09172a] min-[600px]:aspect-[16/10] min-[821px]:mt-9 min-[821px]:h-[clamp(480px,62dvh,700px)] min-[821px]:aspect-auto">
+      <div
+        ref={frameRef}
+        className={
+          isFullscreen
+            ? "fixed inset-0 z-50 overflow-hidden bg-[#09172a]"
+            : "relative mt-8 aspect-[4/5] overflow-hidden border border-navy/12 bg-[#09172a] min-[600px]:aspect-[16/10] min-[821px]:mt-9 min-[821px]:h-[clamp(480px,62dvh,700px)] min-[821px]:aspect-auto"
+        }
+      >
         {isStarted ? (
           <>
             <iframe
@@ -42,14 +90,36 @@ export function VirtualTour({ copy }: { copy: Dictionary["tour"] }) {
               allowFullScreen
               referrerPolicy="strict-origin-when-cross-origin"
             />
-            <div className="pointer-events-none absolute top-4 left-4 border border-white/25 bg-navy/80 px-3 py-2 font-display text-[9px] font-semibold tracking-[0.16em] text-white uppercase backdrop-blur-sm min-[821px]:top-6 min-[821px]:left-6">
-              DAJMI · 360°
-            </div>
+
+            {isFullscreen ? (
+              <button
+                type="button"
+                onClick={exitFullscreen}
+                aria-label={copy.exitFullscreen}
+                className="absolute top-[max(12px,env(safe-area-inset-top))] right-[max(12px,env(safe-area-inset-right))] z-[1] grid size-11 place-items-center bg-white text-navy"
+              >
+                <svg aria-hidden="true" viewBox="0 0 20 20" className="size-5" fill="none">
+                  <path
+                    d="m4 4 12 12M16 4 4 16"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                </svg>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={enterFullscreen}
+                className="absolute right-3 bottom-[max(12px,env(safe-area-inset-bottom))] left-3 z-[1] bg-white px-5 py-3.5 text-center font-display text-sm font-semibold tracking-[0.04em] text-navy min-[821px]:right-5 min-[821px]:bottom-5 min-[821px]:left-auto min-[821px]:w-fit"
+              >
+                {copy.enterFullscreen}
+              </button>
+            )}
           </>
         ) : (
           <button
             type="button"
-            onClick={() => setIsStarted(true)}
+            onClick={startTour}
             className="group absolute inset-0 cursor-pointer text-left"
             aria-label={copy.startAria}
           >
