@@ -11,6 +11,7 @@
 }
 
 body {
+  background: var(--color-navy);
   font-family: var(--font-sans), Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
