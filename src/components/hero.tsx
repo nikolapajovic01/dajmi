@@ -5,7 +5,7 @@ import { MobileNav } from "./mobile-nav";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-navy text-white min-[821px]:min-h-[720px] min-[1181px]:min-h-[860px]">
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-navy text-white min-[821px]:min-h-[min(720px,90dvh)] min-[1181px]:min-h-[min(860px,88dvh)]">
       <div className="absolute inset-0" aria-hidden="true">
         <video
           className="size-full object-cover object-center motion-reduce:hidden"
