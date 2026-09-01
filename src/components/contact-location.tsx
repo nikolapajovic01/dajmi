@@ -43,7 +43,7 @@ export function ContactLocation({ copy }: { copy: Dictionary["cta"] }) {
 
         <div className="mt-6 flex flex-col gap-3 min-[600px]:flex-row min-[600px]:items-center min-[821px]:mt-6 min-[821px]:gap-4">
           <Link
-            href="/zakazivanje"
+            href="/kontakt"
             className="bg-white px-8 py-[15px] text-center font-display text-sm font-semibold tracking-[0.04em] text-navy transition-colors hover:bg-navy-accent hover:text-white min-[821px]:px-9 min-[821px]:py-4"
           >
             {copy.book}

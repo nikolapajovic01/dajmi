@@ -1,6 +1,6 @@
-# DAJMI
+# D.A.J.M.I.
 
-Sajt za DAJMI — ovlašćeni Škoda servis u Herceg Novom. Next.js (App Router) + Tailwind CSS.
+Sajt za D.A.J.M.I. - ovlašćeni Škoda servis u Herceg Novom. Next.js (App Router) + Tailwind CSS.
 
 Trenutno je implementirana samo hero sekcija (`src/components/hero.tsx`); ostale stranice (usluge, o nama, galerija, kontakt) i navigacioni linkovi su placeholderi za dalji razvoj.
 
@@ -15,10 +15,10 @@ Otvori [http://localhost:3000](http://localhost:3000).
 
 ## Struktura
 
-- `src/app` — rute (App Router)
-- `src/components` — UI komponente (`hero`, `mobile-nav`, `logo`)
-- `src/lib/site-config.ts` — sadržaj koji se lako menja (telefon, navigacija, statistike)
-- `public/hero.mp4`, `public/hero-poster.jpg` — video pozadina hero sekcije
+- `src/app` - rute (App Router)
+- `src/components` - UI komponente (`hero`, `mobile-nav`, `logo`)
+- `src/lib/site-config.ts` - sadržaj koji se lako menja (telefon, navigacija, statistike)
+- `public/hero.mp4`, `public/hero-poster.jpg` - video pozadina hero sekcije
 
 ## Deploy
 

@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  redirects() {
+    return [
+      {
+        source: "/zakazivanje",
+        destination: "/kontakt",
+        permanent: false,
+      },
+      {
+        source: "/taxi-more",
+        destination: "https://taximore.com",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

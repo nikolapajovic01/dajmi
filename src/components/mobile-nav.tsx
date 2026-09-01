@@ -68,7 +68,7 @@ export function MobileNav({
       >
         <div className="flex items-center justify-between">
           <span className="font-display text-xl font-bold tracking-[0.3em] text-white">
-            DAJMI
+            D.A.J.M.I.
           </span>
           <button
             ref={closeRef}

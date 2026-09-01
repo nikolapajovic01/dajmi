@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PHONE } from "@/lib/site-config";
+import { EMAIL, PHONE } from "@/lib/site-config";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { LanguageSwitcher } from "./language-switcher";
 import { Logo } from "./logo";
@@ -28,6 +28,7 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
                 <li key={link.label} className="border-b border-white/8 last:border-b-0">
                   <Link
                     href={link.href}
+                    {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
                     className="block py-2.5 text-[15px] text-white/72 transition-colors hover:text-white"
                   >
                     {link.label}
@@ -46,6 +47,7 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
                 <li key={link.label} className="border-b border-white/8 last:border-b-0">
                   <Link
                     href={link.href}
+                    {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
                     className="block py-2.5 text-[15px] text-white/72 transition-colors hover:text-white"
                   >
                     {link.label}
@@ -68,6 +70,14 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
                   {PHONE.display}
                 </a>
               </li>
+              <li className="border-b border-white/8 py-2.5">
+                <a
+                  href={EMAIL.href}
+                  className="text-[15px] text-white/72 transition-colors hover:text-white"
+                >
+                  {EMAIL.display}
+                </a>
+              </li>
               <li className="py-2.5 text-[15px] text-white/72">
                 {dict.footer.location}
               </li>
@@ -77,9 +87,10 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-white/12 pt-6 min-[821px]:mt-20 min-[821px]:flex-row min-[821px]:items-center min-[821px]:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-            <p className="text-[13px] text-white/38">
-              © {new Date().getFullYear()} DAJMI
-            </p>
+            <div className="text-[13px] text-white/38">
+              <p>© {new Date().getFullYear()} D.A.J.M.I.</p>
+              <p className="mt-1 text-[12px] text-white/28">{dict.footer.legal}</p>
+            </div>
             <LanguageSwitcher locale={locale} label={dict.language.label} />
           </div>
 

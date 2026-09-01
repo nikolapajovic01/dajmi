@@ -7,9 +7,9 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { useReveal } from "@/lib/use-reveal";
 
 const PHOTO_SRC = {
-  building: "/dajmi2.webp",
-  complex: "/dajmi1.webp",
-  workshop: "/dajmi6.webp",
+  building: "/dajmi22.webp",
+  complex: "/dajmi11.webp",
+  workshop: "/dajmi66.webp",
 } as const;
 
 const PHOTO_ORDER = ["building", "complex", "workshop"] as const;
@@ -82,7 +82,7 @@ export function AboutPreview({ copy }: { copy: Dictionary["about"] }) {
     >
       <div className="px-[22px] pt-20 pb-16 min-[821px]:px-10 min-[821px]:pt-16 min-[821px]:pb-14 min-[1181px]:px-[72px] min-[1181px]:pt-20 min-[1181px]:pb-16">
         <div className="about-copy-reveal mb-12 border-t border-navy/18 pt-5 min-[821px]:mb-9">
-          <p className="font-display text-[11px] font-semibold tracking-[0.22em] uppercase min-[821px]:text-xs">
+          <p className="font-display text-[13px] font-bold tracking-[0.16em] text-navy uppercase min-[821px]:text-sm">
             {copy.kicker}
           </p>
         </div>

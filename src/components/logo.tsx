@@ -4,7 +4,7 @@ import Link from "next/link";
 export function Logo({
   className = "",
   imageClassName = "h-[76px] min-[821px]:h-[92px]",
-  ariaLabel = "DAJMI — početna",
+  ariaLabel = "D.A.J.M.I. - početna",
 }: {
   className?: string;
   imageClassName?: string;
@@ -13,8 +13,8 @@ export function Logo({
   return (
     <Link href="/" aria-label={ariaLabel} className={`flex items-center ${className}`}>
       <Image
-        src="/dajmi-logo.png"
-        alt="DAJMI"
+        src="/dajmi-logo-transparent.png"
+        alt="D.A.J.M.I."
         width={500}
         height={500}
         className={`w-auto -translate-x-[17.4%] brightness-0 invert ${imageClassName}`}

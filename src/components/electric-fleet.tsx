@@ -10,11 +10,11 @@ export function ElectricFleet({ copy }: { copy: Dictionary["fleet"] }) {
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image
-          src="/bydflota.webp"
+          src="/taximore/IMG_4311.webp"
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-[72%_center]"
+          className="object-cover object-center"
         />
       </div>
       <div

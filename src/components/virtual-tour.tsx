@@ -124,7 +124,7 @@ export function VirtualTour({ copy }: { copy: Dictionary["tour"] }) {
             aria-label={copy.startAria}
           >
             <Image
-              src="/dajmi2.webp"
+              src="/dajmi22.webp"
               alt=""
               fill
               sizes="(max-width: 820px) 100vw, calc(100vw - 144px)"

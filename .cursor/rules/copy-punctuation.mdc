@@ -1,0 +1,26 @@
+---
+description: Use a regular hyphen in all copy, never an em dash or en dash
+alwaysApply: true
+---
+
+# Punctuation in copy
+
+Do not use an em dash (`—`) or an en dash (`–`) in UI copy, metadata, aria labels, or comments we write.
+
+Use a regular hyphen (`-`), with the same spacing the sentence already has.
+
+```
+# Bad
+DAJMI — Ovlašćeni Škoda servis
+08:00 — 17:00
+Pon–Sub
+Za servis, tehnički pregled ili informacije — tu smo u Mokrinama.
+
+# Good
+DAJMI - Ovlašćeni Škoda servis
+08:00 - 17:00
+Pon-Sub
+Za servis, tehnički pregled ili informacije - tu smo u Mokrinama.
+```
+
+Leave the auto-generated Next.js block in `AGENTS.md` alone; `next dev` rewrites it.
