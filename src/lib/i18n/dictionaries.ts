@@ -12,7 +12,7 @@ const cnr = {
     title: "D.A.J.M.I. - Ovlašćeni Škoda servis, Herceg Novi",
     description:
       "Ovlašćeni Škoda servis u Herceg Novom. Dugogodišnja tradicija, originalni dijelovi i sertifikovani tehničari.",
-    ogAlt: "Ulaz u D.A.J.M.I. kompleks u Mokrinama, Herceg Novi",
+    ogAlt: "Ulaz u D.A.J.M.I. kompleks u Sutorini, Herceg Novi",
   },
   logoHome: "D.A.J.M.I. - početna",
   nav: {
@@ -71,7 +71,7 @@ const cnr = {
         href: "https://taximore.com",
         cta: "Upoznajte Taxi More",
         image: "/taximore/IMG_4317.webp",
-        alt: "Taxi More BYD vozila ispred kompleksa u Mokrinama",
+        alt: "Taxi More BYD vozila ispred kompleksa u Sutorini",
       },
       {
         number: "02",
@@ -137,7 +137,7 @@ const cnr = {
     },
     kicker: "Kontakt",
     title: "Javite nam se.",
-    lead: "Tu smo za sva pitanja o servisu, tehničkom pregledu i ostalim uslugama. Pozovite, pišite ili nas posjetite u Mokrinama, Herceg Novi.",
+    lead: "Tu smo za sva pitanja o servisu, tehničkom pregledu i ostalim uslugama. Pozovite, pišite ili nas posjetite u Sutorini, Herceg Novi.",
     channels: {
       title: "Ostanimo u kontaktu",
       info: "Informacije",
@@ -148,7 +148,7 @@ const cnr = {
     },
     location: {
       title: "Gdje nas pronaći",
-      value: "Mokrine, Herceg Novi, Crna Gora",
+      value: "Sutorina, Herceg Novi, Crna Gora",
       map: "Otvorite u Google mapama",
     },
     form: {
@@ -173,7 +173,7 @@ const cnr = {
     meta: {
       title: "Usluge - D.A.J.M.I.",
       description:
-        "Ovlašćeni Škoda servis u Herceg Novom: mehanika, elektrika, dijagnostika, reglaža trapa, vulkanizer i limarske usluge za sve marke.",
+        "Ovlašćeni Škoda servis u Herceg Novom: mehanika, elektrika, dijagnostika, reglaža trapa, vulkanizer i limarsko-farbarska radionica za sve marke.",
     },
     kicker: "Usluge",
     title: "Ovlašćeni Škoda servis.",
@@ -198,10 +198,10 @@ const cnr = {
         alt: "Vulkanizerska oprema za montažu i balansiranje guma",
       },
       {
-        name: "Limarske usluge",
+        name: "Limarsko-farbarska radionica",
         lead: "Termalna komora za lakiranje",
         body: "Moderne dizalice, alati i termalna komora za lakiranje osiguravaju visok kvalitet i originalni izgled lakiranih površina vašeg automobila.",
-        alt: "Limarska radionica D.A.J.M.I. sa vozilom na dizalici",
+        alt: "Limarsko-farbarska radionica D.A.J.M.I. sa vozilom na dizalici",
       },
     ],
     inspection: {
@@ -227,9 +227,9 @@ const cnr = {
     },
     kicker: "Tehnički pregled",
     title: "Pregled, registracija i osiguranje.",
-    lead: "Posebno odjeljenje u Mokrinama. Automobili i motori, u istoj kući sa servisom.",
+    lead: "Posebno odjeljenje u Sutorini. Automobili i motori, u istoj kući sa servisom.",
     hero: {
-      lead: "Mokrine, Herceg Novi",
+      lead: "Sutorina, Herceg Novi",
       title: "Dođite na pregled.",
       body: "Redovni i vanredni tehnički pregled automobila i motora. Pozovite odjeljenje ili dođite u radnom vremenu.",
       alt: "Tehnički pregled vozila u D.A.J.M.I. centru",
@@ -268,7 +268,7 @@ const cnr = {
       body: "Ovo je broj tehničkog pregleda, ne servisa.",
       hours: "Radno vrijeme",
       place: "Lokacija",
-      location: "Mokrine, Herceg Novi",
+      location: "Sutorina, Herceg Novi",
       map: "Prikaži na mapi",
       book: "Pošaljite upit",
     },
@@ -281,24 +281,24 @@ const cnr = {
     },
     kicker: "O nama",
     title: "Jedna kompanija. Sve za vaš put.",
-    lead: "Više od dvije decenije u Herceg Novom. Taxi More, ovlašćeni Škoda servis i tehnički pregled - u Mokrinama.",
+    lead: "Više od dvije decenije u Herceg Novom. Taxi More, ovlašćeni Škoda servis i tehnički pregled - u Sutorini.",
     story:
       "Ovlašćeni smo servisni partner za Škodu, a radionicu otvaramo i svim drugim markama. Tehničari se usavršavaju u trening centrima uvoznika. U radionici je devet mjesta sa dizalicama, originalni dijelovi i licencirani alati - garancija ostaje i u garantnom periodu.",
     photo: {
       kicker: "Kompleks",
-      title: "Mokrine, Herceg Novi.",
+      title: "Sutorina, Herceg Novi.",
       alt: "D.A.J.M.I. kompleks u Herceg Novom iz vazduha",
-      storyAlt: "Servisna hala D.A.J.M.I. kompleksa u Mokrinama",
+      storyAlt: "Servisna hala D.A.J.M.I. kompleksa u Sutorini",
     },
     video: {
       play: "Pustite snimak",
       playAria: "Pustite video snimak D.A.J.M.I. kompleksa",
-      iframeTitle: "Video snimak D.A.J.M.I. kompleksa u Mokrinama",
+      iframeTitle: "Video snimak D.A.J.M.I. kompleksa u Sutorini",
     },
     cta: {
       kicker: "Kontakt",
       title: "Javite nam se.",
-      body: "Za servis, tehnički pregled ili informacije - tu smo u Mokrinama.",
+      body: "Za servis, tehnički pregled ili informacije - tu smo u Sutorini.",
       book: "Kontakt",
     },
   },
@@ -306,10 +306,10 @@ const cnr = {
     meta: {
       title: "Galerija - D.A.J.M.I.",
       description:
-        "Fotografije D.A.J.M.I. kompleksa u Mokrinama: zgrada, radionica, tehnički pregled i Taxi More.",
+        "Fotografije D.A.J.M.I. kompleksa u Sutorini: zgrada, radionica, tehnički pregled i Taxi More.",
     },
     kicker: "Galerija",
-    title: "Kompleks u Mokrinama.",
+    title: "Kompleks u Sutorini.",
     lead: "Zgrada, radionica, tehnički pregled i Taxi More.",
     lightbox: "Uvećana fotografija",
     close: "Zatvori uvećanu fotografiju",
@@ -328,7 +328,7 @@ const cnr = {
       },
       hall: {
         caption: "Servisna hala",
-        alt: "Servisna hala D.A.J.M.I. kompleksa u Mokrinama",
+        alt: "Servisna hala D.A.J.M.I. kompleksa u Sutorini",
       },
       aerial: {
         caption: "Kompleks",
@@ -336,7 +336,7 @@ const cnr = {
       },
       aerialPark: {
         caption: "Parking",
-        alt: "D.A.J.M.I. kompleks i parking u Mokrinama iz vazduha",
+        alt: "D.A.J.M.I. kompleks i parking u Sutorini iz vazduha",
       },
       entrance: {
         caption: "Prilaz",
@@ -363,8 +363,8 @@ const cnr = {
         alt: "Vulkanizerska oprema za montažu i balansiranje guma",
       },
       bodywork: {
-        caption: "Limarske",
-        alt: "Limarska radionica D.A.J.M.I. sa vozilom na dizalici",
+        caption: "Limarsko-farbarska",
+        alt: "Limarsko-farbarska radionica D.A.J.M.I. sa vozilom na dizalici",
       },
       desk: {
         caption: "Desk",
@@ -380,7 +380,7 @@ const cnr = {
       },
       paint: {
         caption: "Lakirnica",
-        alt: "Mješanje laka u D.A.J.M.I. limarskoj radionici",
+        alt: "Mješanje laka u D.A.J.M.I. limarsko-farbarskoj radionici",
       },
       taxi: {
         caption: "Taxi More",
@@ -388,11 +388,11 @@ const cnr = {
       },
       fleet: {
         caption: "Flota",
-        alt: "Taxi More BYD flota na parkingu u Mokrinama",
+        alt: "Taxi More BYD flota na parkingu u Sutorini",
       },
       charging: {
         caption: "Punjenje",
-        alt: "Taxi More BYD na punjaču u Mokrinama",
+        alt: "Taxi More BYD na punjaču u Sutorini",
       },
       interior: {
         caption: "Kabina",
@@ -404,13 +404,13 @@ const cnr = {
       },
       lineup: {
         caption: "Vozila",
-        alt: "Red Taxi More BYD vozila u Mokrinama",
+        alt: "Red Taxi More BYD vozila u Sutorini",
       },
     },
     cta: {
       kicker: "Kontakt",
       title: "Javite nam se.",
-      body: "Za servis, tehnički pregled ili informacije - tu smo u Mokrinama.",
+      body: "Za servis, tehnički pregled ili informacije - tu smo u Sutorini.",
       book: "Kontakt",
     },
   },
@@ -427,7 +427,7 @@ const cnr = {
       {
         heading: "Ko obrađuje podatke",
         body: [
-          "\"COMPANY D.A.J.M.I.\" d.o.o. (PIB 02434296, matični broj 5-0254363/021), sa sjedištem u Sutorini, Herceg Novi, Crna Gora. Servisni centar se nalazi u Mokrinama, Herceg Novi. Za pitanja o podacima pišite na info@dajmi.me ili pozovite +382 31 670 240.",
+          "\"COMPANY D.A.J.M.I.\" d.o.o. (PIB 02434296, matični broj 5-0254363/021), sa sjedištem u Sutorini, Herceg Novi, Crna Gora. Za pitanja o podacima pišite na info@dajmi.me ili pozovite +382 31 670 240.",
         ],
       },
       {
@@ -473,13 +473,13 @@ const cnr = {
         heading: "Podaci o firmi",
         body: [
           "Sajt vodi \"COMPANY D.A.J.M.I.\" d.o.o., sa sjedištem na adresi Jadranska br. 63, Sutorina, Herceg Novi, Crna Gora. PIB: 02434296, matični broj: 5-0254363/021, PDV broj: 90/31-01011-7. Društvo je upisano kod Privrednog suda u Podgorici.",
-          "Servisni kompleks koji posjećujete nalazi se u Mokrinama, Herceg Novi.",
+          "Servisni kompleks koji posjećujete nalazi se u Sutorini, Herceg Novi.",
         ],
       },
       {
         heading: "Sajt",
         body: [
-          "Ove stranice predstavljaju D.A.J.M.I. u Mokrinama, Herceg Novi. Tekst, cijene ako se pojave i opisi usluga su informativni. Nisu ponuda ni ugovor.",
+          "Ove stranice predstavljaju D.A.J.M.I. u Sutorini, Herceg Novi. Tekst, cijene ako se pojave i opisi usluga su informativni. Nisu ponuda ni ugovor.",
         ],
       },
       {
@@ -503,7 +503,7 @@ const cnr = {
       {
         heading: "Kontakt",
         body: [
-          "Pitanja o sajtu: info@dajmi.me, +382 31 670 240. Mokrine, Herceg Novi.",
+          "Pitanja o sajtu: info@dajmi.me, +382 31 670 240. Sutorina, Herceg Novi.",
         ],
       },
     ],
@@ -515,7 +515,7 @@ const cnr = {
     unitsTitle: "Poslovne cjeline",
     unitsAria: "Poslovne cjeline",
     contactTitle: "Kontakt",
-    location: "Mokrine, Herceg Novi, Crna Gora",
+    location: "Sutorina, Herceg Novi, Crna Gora",
     legal: "\"COMPANY D.A.J.M.I.\" d.o.o. · PIB 02434296 · MB 5-0254363/021",
     privacy: "Politika privatnosti",
     terms: "Uslovi korišćenja",
@@ -553,7 +553,7 @@ const en = {
     title: "D.A.J.M.I. - Authorised Škoda service, Herceg Novi",
     description:
       "Authorised Škoda service in Herceg Novi. Long-standing tradition, genuine parts and certified technicians.",
-    ogAlt: "Entrance to the D.A.J.M.I. complex in Mokrine, Herceg Novi",
+    ogAlt: "Entrance to the D.A.J.M.I. complex in Sutorina, Herceg Novi",
   },
   logoHome: "D.A.J.M.I. - home",
   nav: {
@@ -612,7 +612,7 @@ const en = {
         href: "https://taximore.com",
         cta: "Discover Taxi More",
         image: "/taximore/IMG_4317.webp",
-        alt: "Taxi More BYD vehicles in front of the complex in Mokrine",
+        alt: "Taxi More BYD vehicles in front of the complex in Sutorina",
       },
       {
         number: "02",
@@ -678,7 +678,7 @@ const en = {
     },
     kicker: "Contact",
     title: "Get in touch.",
-    lead: "We're here for any questions about service, technical inspection and other services. Call, write or visit us in Mokrine, Herceg Novi.",
+    lead: "We're here for any questions about service, technical inspection and other services. Call, write or visit us in Sutorina, Herceg Novi.",
     channels: {
       title: "Stay in touch",
       info: "Information",
@@ -689,7 +689,7 @@ const en = {
     },
     location: {
       title: "Where to find us",
-      value: "Mokrine, Herceg Novi, Montenegro",
+      value: "Sutorina, Herceg Novi, Montenegro",
       map: "Open in Google Maps",
     },
     form: {
@@ -714,7 +714,7 @@ const en = {
     meta: {
       title: "Services - D.A.J.M.I.",
       description:
-        "Authorised Škoda service in Herceg Novi: mechanics, electrics, diagnostics, wheel alignment, tyres and bodywork for all brands.",
+        "Authorised Škoda service in Herceg Novi: mechanics, electrics, diagnostics, wheel alignment, tyres and a bodywork and paint workshop for all brands.",
     },
     kicker: "Services",
     title: "Authorised Škoda service.",
@@ -739,10 +739,10 @@ const en = {
         alt: "Tyre fitting and balancing equipment",
       },
       {
-        name: "Bodywork",
+        name: "Bodywork and paint workshop",
         lead: "A thermal booth for painting",
         body: "Modern lifts, tools and a thermal paint booth ensure a high finish and the original look of painted surfaces on your car.",
-        alt: "D.A.J.M.I. bodywork workshop with a vehicle on a lift",
+        alt: "D.A.J.M.I. bodywork and paint workshop with a vehicle on a lift",
       },
     ],
     inspection: {
@@ -768,9 +768,9 @@ const en = {
     },
     kicker: "Technical inspection",
     title: "Inspection, registration and insurance.",
-    lead: "A dedicated department in Mokrine. Cars and motorcycles, in the same house as the workshop.",
+    lead: "A dedicated department in Sutorina. Cars and motorcycles, in the same house as the workshop.",
     hero: {
-      lead: "Mokrine, Herceg Novi",
+      lead: "Sutorina, Herceg Novi",
       title: "Come in for an inspection.",
       body: "Regular and extraordinary technical inspection of cars and motorcycles. Call the department or come during opening hours.",
       alt: "Vehicle technical inspection at the D.A.J.M.I. centre",
@@ -809,7 +809,7 @@ const en = {
       body: "This is the technical inspection number, not the workshop.",
       hours: "Opening hours",
       place: "Location",
-      location: "Mokrine, Herceg Novi",
+      location: "Sutorina, Herceg Novi",
       map: "Show on map",
       book: "Send an enquiry",
     },
@@ -822,24 +822,24 @@ const en = {
     },
     kicker: "About",
     title: "One company. Everything for your journey.",
-    lead: "More than two decades in Herceg Novi. Taxi More, authorised Škoda service and technical inspection - in Mokrine.",
+    lead: "More than two decades in Herceg Novi. Taxi More, authorised Škoda service and technical inspection - in Sutorina.",
     story:
       "We are an authorised service partner for Škoda, and the workshop is open to every other brand as well. Technicians train at importer centres. The workshop has nine lift bays, genuine parts and licensed tools - warranty cover stays in place during the warranty period.",
     photo: {
       kicker: "The complex",
-      title: "Mokrine, Herceg Novi.",
+      title: "Sutorina, Herceg Novi.",
       alt: "Aerial view of the D.A.J.M.I. complex in Herceg Novi",
-      storyAlt: "Service hall of the D.A.J.M.I. complex in Mokrine",
+      storyAlt: "Service hall of the D.A.J.M.I. complex in Sutorina",
     },
     video: {
       play: "Play the film",
       playAria: "Play the video of the D.A.J.M.I. complex",
-      iframeTitle: "Video of the D.A.J.M.I. complex in Mokrine",
+      iframeTitle: "Video of the D.A.J.M.I. complex in Sutorina",
     },
     cta: {
       kicker: "Contact",
       title: "Get in touch.",
-      body: "For service, technical inspection or information - we are in Mokrine.",
+      body: "For service, technical inspection or information - we are in Sutorina.",
       book: "Contact",
     },
   },
@@ -847,10 +847,10 @@ const en = {
     meta: {
       title: "Gallery - D.A.J.M.I.",
       description:
-        "Photographs of the D.A.J.M.I. complex in Mokrine: the building, workshop, technical inspection and Taxi More.",
+        "Photographs of the D.A.J.M.I. complex in Sutorina: the building, workshop, technical inspection and Taxi More.",
     },
     kicker: "Gallery",
-    title: "The complex in Mokrine.",
+    title: "The complex in Sutorina.",
     lead: "The building, workshop, technical inspection and Taxi More.",
     lightbox: "Enlarged photograph",
     close: "Close the enlarged photograph",
@@ -869,7 +869,7 @@ const en = {
       },
       hall: {
         caption: "Service hall",
-        alt: "Service hall of the D.A.J.M.I. complex in Mokrine",
+        alt: "Service hall of the D.A.J.M.I. complex in Sutorina",
       },
       aerial: {
         caption: "The complex",
@@ -877,7 +877,7 @@ const en = {
       },
       aerialPark: {
         caption: "Parking",
-        alt: "Aerial view of the D.A.J.M.I. complex and parking in Mokrine",
+        alt: "Aerial view of the D.A.J.M.I. complex and parking in Sutorina",
       },
       entrance: {
         caption: "Approach",
@@ -904,8 +904,8 @@ const en = {
         alt: "Tyre fitting and balancing equipment",
       },
       bodywork: {
-        caption: "Bodywork",
-        alt: "D.A.J.M.I. bodywork workshop with a vehicle on a lift",
+        caption: "Bodywork and paint",
+        alt: "D.A.J.M.I. bodywork and paint workshop with a vehicle on a lift",
       },
       desk: {
         caption: "Desk",
@@ -921,7 +921,7 @@ const en = {
       },
       paint: {
         caption: "Paint shop",
-        alt: "Paint mixing in the D.A.J.M.I. bodywork workshop",
+        alt: "Paint mixing in the D.A.J.M.I. bodywork and paint workshop",
       },
       taxi: {
         caption: "Taxi More",
@@ -929,11 +929,11 @@ const en = {
       },
       fleet: {
         caption: "Fleet",
-        alt: "Taxi More BYD fleet in the parking lot in Mokrine",
+        alt: "Taxi More BYD fleet in the parking lot in Sutorina",
       },
       charging: {
         caption: "Charging",
-        alt: "Taxi More BYD at a charger in Mokrine",
+        alt: "Taxi More BYD at a charger in Sutorina",
       },
       interior: {
         caption: "Cabin",
@@ -945,13 +945,13 @@ const en = {
       },
       lineup: {
         caption: "Vehicles",
-        alt: "A row of Taxi More BYD vehicles in Mokrine",
+        alt: "A row of Taxi More BYD vehicles in Sutorina",
       },
     },
     cta: {
       kicker: "Contact",
       title: "Get in touch.",
-      body: "For service, technical inspection or information - we are in Mokrine.",
+      body: "For service, technical inspection or information - we are in Sutorina.",
       book: "Contact",
     },
   },
@@ -968,7 +968,7 @@ const en = {
       {
         heading: "Who processes the data",
         body: [
-          "\"COMPANY D.A.J.M.I.\" d.o.o. (Tax ID 02434296, registration number 5-0254363/021), registered in Sutorina, Herceg Novi, Montenegro. The service centre is located in Mokrine, Herceg Novi. For questions about your data, write to info@dajmi.me or call +382 31 670 240.",
+          "\"COMPANY D.A.J.M.I.\" d.o.o. (Tax ID 02434296, registration number 5-0254363/021), registered in Sutorina, Herceg Novi, Montenegro. For questions about your data, write to info@dajmi.me or call +382 31 670 240.",
         ],
       },
       {
@@ -1014,13 +1014,13 @@ const en = {
         heading: "Company information",
         body: [
           "This site is run by \"COMPANY D.A.J.M.I.\" d.o.o., registered at Jadranska br. 63, Sutorina, Herceg Novi, Montenegro. Tax ID (PIB): 02434296, registration number (matični broj): 5-0254363/021, VAT number: 90/31-01011-7. The company is registered with the Commercial Court in Podgorica.",
-          "The service complex you visit is located in Mokrine, Herceg Novi.",
+          "The service complex you visit is located in Sutorina, Herceg Novi.",
         ],
       },
       {
         heading: "The site",
         body: [
-          "These pages present D.A.J.M.I. in Mokrine, Herceg Novi. Text, any prices that appear and service descriptions are information. They are not an offer or a contract.",
+          "These pages present D.A.J.M.I. in Sutorina, Herceg Novi. Text, any prices that appear and service descriptions are information. They are not an offer or a contract.",
         ],
       },
       {
@@ -1044,7 +1044,7 @@ const en = {
       {
         heading: "Contact",
         body: [
-          "Questions about the site: info@dajmi.me, +382 31 670 240. Mokrine, Herceg Novi.",
+          "Questions about the site: info@dajmi.me, +382 31 670 240. Sutorina, Herceg Novi.",
         ],
       },
     ],
@@ -1056,7 +1056,7 @@ const en = {
     unitsTitle: "Business units",
     unitsAria: "Business units",
     contactTitle: "Contact",
-    location: "Mokrine, Herceg Novi, Montenegro",
+    location: "Sutorina, Herceg Novi, Montenegro",
     legal: "\"COMPANY D.A.J.M.I.\" d.o.o. · Tax ID 02434296 · Reg. No. 5-0254363/021",
     privacy: "Privacy policy",
     terms: "Terms of use",

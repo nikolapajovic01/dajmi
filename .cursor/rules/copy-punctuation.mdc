@@ -14,13 +14,13 @@ Use a regular hyphen (`-`), with the same spacing the sentence already has.
 DAJMI — Ovlašćeni Škoda servis
 08:00 — 17:00
 Pon–Sub
-Za servis, tehnički pregled ili informacije — tu smo u Mokrinama.
+Za servis, tehnički pregled ili informacije — tu smo u Sutorini.
 
 # Good
 DAJMI - Ovlašćeni Škoda servis
 08:00 - 17:00
 Pon-Sub
-Za servis, tehnički pregled ili informacije - tu smo u Mokrinama.
+Za servis, tehnički pregled ili informacije - tu smo u Sutorini.
 ```
 
 Leave the auto-generated Next.js block in `AGENTS.md` alone; `next dev` rewrites it.

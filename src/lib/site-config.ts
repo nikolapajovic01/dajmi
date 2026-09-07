@@ -23,9 +23,9 @@ export const EMAIL = {
 
 export const LOCATION = {
   city: "Herceg Novi",
-  area: "Mokrine",
+  area: "Sutorina",
   country: "Crna Gora",
-  mapQuery: "DAJMI Mokrine Herceg Novi",
+  mapQuery: "DAJMI Sutorina Herceg Novi",
 } as const;
 
 export const HOURS = {
