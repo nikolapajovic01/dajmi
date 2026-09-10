@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n/dictionaries";
+import { withLocale } from "@/lib/i18n/paths";
 import { useReveal } from "@/lib/use-reveal";
 
 export function ServiceChapter({
@@ -15,6 +17,7 @@ export function ServiceChapter({
   href,
   cta,
   tone = "light",
+  locale,
 }: {
   name: string;
   lead: string;
@@ -26,9 +29,11 @@ export function ServiceChapter({
   href?: string;
   cta?: string;
   tone?: "light" | "dark";
+  locale?: Locale;
 }) {
   const ref = useReveal<HTMLElement>(0.18);
   const dark = tone === "dark";
+  const linkHref = href && locale ? withLocale(locale, href) : href;
 
   return (
     <article
@@ -74,9 +79,9 @@ export function ServiceChapter({
         >
           {body}
         </p>
-        {href && cta ? (
+        {linkHref && cta ? (
           <Link
-            href={href}
+            href={linkHref}
             className={`group/link mt-7 inline-flex w-fit items-center gap-4 border-b pb-2.5 font-display text-sm font-semibold tracking-[0.06em] uppercase transition-colors ${
               dark
                 ? "border-white/45 hover:border-white hover:text-white"

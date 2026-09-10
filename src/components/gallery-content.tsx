@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { PHONE } from "@/lib/site-config";
+import { withLocale } from "@/lib/i18n/paths";
 
 type PhotoId = keyof Dictionary["galleryPage"]["photos"];
 type GroupKey = keyof Dictionary["galleryPage"]["groups"];
@@ -13,13 +14,20 @@ const GROUPS: { key: GroupKey; items: { id: PhotoId; src: string; className: str
   {
     key: "complex",
     items: [
-      { id: "building", src: "/dajmi22.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-8" },
-      { id: "hall", src: "/dajmi55.webp", className: "aspect-[4/5] min-[821px]:col-span-4 min-[821px]:aspect-auto min-[821px]:min-h-full" },
+      { id: "dusk", src: "/galerija/AQ5A9187.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-8" },
+      { id: "duskFacade", src: "/galerija/AQ5A9217.webp", className: "aspect-[4/5] min-[821px]:col-span-4 min-[821px]:aspect-auto min-[821px]:min-h-full" },
+      { id: "complexWide", src: "/galerija/AQ5A9003.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-7" },
+      { id: "serviceFacade", src: "/galerija/AQ5A8917.webp", className: "col-span-2 aspect-[4/3] min-[821px]:col-span-5 min-[821px]:aspect-auto min-[821px]:min-h-full" },
+      { id: "building", src: "/galerija/AQ5A9164.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-8" },
+      { id: "showroomGlass", src: "/galerija/AQ5A8931.webp", className: "aspect-[4/5] min-[821px]:col-span-4 min-[821px]:aspect-auto min-[821px]:min-h-full" },
       { id: "aerial", src: "/dajmi11.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-7" },
       { id: "aerialPark", src: "/dajmi77.webp", className: "col-span-2 aspect-[4/3] min-[821px]:col-span-5 min-[821px]:aspect-auto min-[821px]:min-h-full" },
-      { id: "entrance", src: "/prilaz.webp", className: "aspect-[4/3] min-[821px]:col-span-6" },
-      { id: "inspection", src: "/saSajta/tehnickipregled.webp", className: "aspect-[4/3] min-[821px]:col-span-6" },
-      { id: "desk", src: "/saSajta/zamena3.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-12 min-[821px]:aspect-[21/9]" },
+      { id: "showroom", src: "/galerija/AQ5A8961.webp", className: "aspect-[4/3] min-[821px]:col-span-4" },
+      { id: "inspectionSign", src: "/galerija/AQ5A8913.webp", className: "aspect-[4/3] min-[821px]:col-span-4" },
+      { id: "wayfinding", src: "/galerija/AQ5A8940.webp", className: "aspect-[4/3] min-[821px]:col-span-4" },
+      { id: "skodaTotem", src: "/galerija/AQ5A9175.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-6" },
+      { id: "inspection", src: "/saSajta/tehnickipregled.webp", className: "col-span-2 aspect-[4/3] min-[821px]:col-span-6" },
+      { id: "hall", src: "/dajmi55.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-12 min-[821px]:aspect-[21/9]" },
     ],
   },
   {
@@ -38,19 +46,31 @@ const GROUPS: { key: GroupKey; items: { id: PhotoId; src: string; className: str
   {
     key: "taxi",
     items: [
-      { id: "fleet", src: "/taximore/IMG_4311.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-8" },
-      { id: "taxi", src: "/taximore/IMG_4314.webp", className: "aspect-[4/5] min-[821px]:col-span-4 min-[821px]:aspect-auto min-[821px]:min-h-full" },
-      { id: "dispatch", src: "/taximore/IMG_4313.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-7" },
-      { id: "charging", src: "/taximore/IMG_4312.webp", className: "col-span-2 aspect-[4/3] min-[821px]:col-span-5 min-[821px]:aspect-auto min-[821px]:min-h-full" },
-      { id: "interior", src: "/taximore/IMG_4321.webp", className: "aspect-[4/3] min-[821px]:col-span-6" },
-      { id: "lineup", src: "/taximore/IMG_4317.webp", className: "aspect-[4/3] min-[821px]:col-span-6" },
+      { id: "fleet", src: "/galerija/AQ5A9022.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-8" },
+      { id: "solarFleet", src: "/galerija/AQ5A8906.webp", className: "aspect-[4/5] min-[821px]:col-span-4 min-[821px]:aspect-auto min-[821px]:min-h-full" },
+      { id: "lineup", src: "/galerija/AQ5A9067.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-7" },
+      { id: "chargeDay", src: "/galerija/AQ5A8880.webp", className: "col-span-2 aspect-[4/3] min-[821px]:col-span-5 min-[821px]:aspect-auto min-[821px]:min-h-full" },
+      { id: "chargeWall", src: "/galerija/AQ5A8896.webp", className: "aspect-[4/3] min-[821px]:col-span-4" },
+      { id: "chargeFast", src: "/galerija/AQ5A8975.webp", className: "aspect-[4/3] min-[821px]:col-span-4" },
+      { id: "chargeGreen", src: "/galerija/AQ5A9086.webp", className: "aspect-[4/3] min-[821px]:col-span-4" },
+      { id: "chargeNight", src: "/galerija/AQ5A9328.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-6" },
+      { id: "chargeTaxi", src: "/galerija/AQ5A9125.webp", className: "col-span-2 aspect-[4/3] min-[821px]:col-span-6" },
+      { id: "nightFleet", src: "/galerija/AQ5A9281.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-8" },
+      { id: "wash", src: "/galerija/AQ5A8874.webp", className: "aspect-[4/5] min-[821px]:col-span-4 min-[821px]:aspect-auto min-[821px]:min-h-full" },
+      { id: "interior", src: "/galerija/AQ5A9264.webp", className: "col-span-2 aspect-[16/10] min-[821px]:col-span-12 min-[821px]:aspect-[21/9]" },
     ],
   },
 ];
 
 const PHOTOS = GROUPS.flatMap((group) => group.items);
 
-export function GalleryContent({ copy }: { copy: Dictionary["galleryPage"] }) {
+export function GalleryContent({
+  copy,
+  locale,
+}: {
+  copy: Dictionary["galleryPage"];
+  locale: Locale;
+}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const touchStartX = useRef<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -121,16 +141,15 @@ export function GalleryContent({ copy }: { copy: Dictionary["galleryPage"] }) {
                   <li key={item.id} className={item.className}>
                     <button
                       type="button"
-                      onClick={() => setActiveIndex(index)}
                       aria-label={`${copy.expand}: ${photo.caption}`}
+                      onClick={() => setActiveIndex(index)}
                       className="group relative block size-full cursor-zoom-in overflow-hidden bg-navy/5 text-left"
                     >
                       <Image
                         src={item.src}
                         alt={photo.alt}
                         fill
-                        priority={index === 0}
-                        sizes="(max-width: 820px) 100vw, 60vw"
+                        sizes="(max-width: 820px) 50vw, 33vw"
                         className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                       />
                       <div
@@ -149,16 +168,13 @@ export function GalleryContent({ copy }: { copy: Dictionary["galleryPage"] }) {
         ))}
       </section>
 
-      <section aria-labelledby="gallery-cta-title" className="bg-navy text-white">
+      <section className="bg-navy text-white">
         <div className="flex flex-col gap-8 px-[22px] py-14 min-[821px]:flex-row min-[821px]:items-end min-[821px]:justify-between min-[821px]:px-10 min-[821px]:py-16 min-[1181px]:px-[72px]">
           <div className="max-w-[560px]">
             <p className="font-display text-[11px] font-semibold tracking-[0.22em] text-white/55 uppercase min-[821px]:text-xs">
               {copy.cta.kicker}
             </p>
-            <h2
-              id="gallery-cta-title"
-              className="mt-3 font-display text-[28px] leading-tight font-bold tracking-[-0.03em] min-[821px]:text-[clamp(32px,3.2vw,44px)]"
-            >
+            <h2 className="mt-3 font-display text-[28px] leading-tight font-bold tracking-[-0.03em] min-[821px]:text-[clamp(32px,3.2vw,44px)]">
               {copy.cta.title}
             </h2>
             <p className="mt-3 max-w-[420px] text-[15px] leading-[1.65] text-white/62">
@@ -168,7 +184,7 @@ export function GalleryContent({ copy }: { copy: Dictionary["galleryPage"] }) {
 
           <div className="flex flex-col gap-3 min-[600px]:flex-row min-[600px]:items-center">
             <Link
-              href="/kontakt"
+              href={withLocale(locale, "/kontakt")}
               className="bg-white px-8 py-[15px] text-center font-display text-sm font-semibold tracking-[0.04em] text-navy transition-colors hover:bg-navy-accent hover:text-white min-[821px]:px-9 min-[821px]:py-4"
             >
               {copy.cta.book}

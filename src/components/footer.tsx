@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { EMAIL, PHONE } from "@/lib/site-config";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import { withLocale } from "@/lib/i18n/paths";
 import { LanguageSwitcher } from "./language-switcher";
 import { Logo } from "./logo";
 
@@ -11,6 +12,7 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
         <div className="grid gap-12 min-[821px]:grid-cols-[minmax(220px,1.15fr)_repeat(3,minmax(0,0.85fr))] min-[821px]:gap-10 min-[1181px]:gap-16">
           <div className="max-w-[300px]">
             <Logo
+              locale={locale}
               ariaLabel={dict.logoHome}
               imageClassName="h-[88px] min-[821px]:h-[108px]"
             />
@@ -27,7 +29,7 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
               {dict.footer.nav.map((link) => (
                 <li key={link.label} className="border-b border-white/8 last:border-b-0">
                   <Link
-                    href={link.href}
+                    href={withLocale(locale, link.href)}
                     {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
                     className="block py-2.5 text-[15px] text-white/72 transition-colors hover:text-white"
                   >
@@ -46,7 +48,7 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
               {dict.footer.units.map((link) => (
                 <li key={link.label} className="border-b border-white/8 last:border-b-0">
                   <Link
-                    href={link.href}
+                    href={withLocale(locale, link.href)}
                     {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
                     className="block py-2.5 text-[15px] text-white/72 transition-colors hover:text-white"
                   >
@@ -96,13 +98,13 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-white/45">
             <Link
-              href="/politika-privatnosti"
+              href={withLocale(locale, "/politika-privatnosti")}
               className="transition-colors hover:text-white"
             >
               {dict.footer.privacy}
             </Link>
             <Link
-              href="/uslovi-koriscenja"
+              href={withLocale(locale, "/uslovi-koriscenja")}
               className="transition-colors hover:text-white"
             >
               {dict.footer.terms}

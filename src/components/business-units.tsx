@@ -1,8 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import { withLocale } from "@/lib/i18n/paths";
 
-export function BusinessUnits({ copy }: { copy: Dictionary["units"] }) {
+export function BusinessUnits({
+  copy,
+  locale,
+}: {
+  copy: Dictionary["units"];
+  locale: Locale;
+}) {
   return (
     <section
       aria-labelledby="business-units-title"
@@ -59,7 +66,7 @@ export function BusinessUnits({ copy }: { copy: Dictionary["units"] }) {
                 {unit.description}
               </p>
               <Link
-                href={unit.href}
+                href={withLocale(locale, unit.href)}
                 {...(unit.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="mt-auto inline-flex w-fit items-center gap-4 border-b border-white/45 pt-5 pb-2 font-display text-xs font-semibold tracking-[0.08em] uppercase transition-colors hover:border-white hover:text-white"
               >

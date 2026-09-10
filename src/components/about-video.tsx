@@ -35,7 +35,7 @@ export function AboutVideo({
           className="group absolute inset-0 cursor-pointer text-left"
         >
           <Image
-            src="/dajmi11.webp"
+            src="/galerija/AQ5A9003.webp"
             alt={posterAlt}
             fill
             sizes="100vw"

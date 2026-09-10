@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import { withLocale } from "@/lib/i18n/paths";
 import { CONTACTS } from "@/lib/site-config";
 import { OpeningHours } from "./opening-hours";
 import { ServiceChapter } from "./service-chapter";
@@ -17,9 +18,11 @@ const SERVICE_PHOTOS = [
 export function ServicesContent({
   copy,
   hours,
+  locale,
 }: {
   copy: Dictionary["servicesPage"];
   hours: Dictionary["hours"];
+  locale: Locale;
 }) {
   return (
     <>
@@ -46,6 +49,7 @@ export function ServicesContent({
           reverse={copy.items.length % 2 === 1}
           href="/tehnicki-pregled"
           cta={copy.inspection.cta}
+          locale={locale}
         />
       </section>
 
@@ -91,7 +95,7 @@ export function ServicesContent({
 
           <div className="mt-6 flex flex-col gap-3 min-[600px]:flex-row min-[600px]:items-center min-[821px]:mt-6 min-[821px]:gap-4">
             <Link
-              href="/kontakt"
+              href={withLocale(locale, "/kontakt")}
               className="bg-white px-8 py-[15px] text-center font-display text-sm font-semibold tracking-[0.04em] text-navy transition-colors hover:bg-navy-accent hover:text-white min-[821px]:px-9 min-[821px]:py-4"
             >
               {copy.cta.book}

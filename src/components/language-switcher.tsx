@@ -1,5 +1,9 @@
-import { setLocale } from "@/lib/i18n/actions";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/i18n/dictionaries";
+import { swapLocale } from "@/lib/i18n/paths";
 
 const OPTIONS: { value: Locale; label: string }[] = [
   { value: "cnr", label: "MNE" },
@@ -13,6 +17,8 @@ export function LanguageSwitcher({
   locale: Locale;
   label: string;
 }) {
+  const pathname = usePathname() || "/";
+
   return (
     <div
       role="group"
@@ -21,6 +27,7 @@ export function LanguageSwitcher({
     >
       {OPTIONS.map((option, index) => {
         const active = option.value === locale;
+        const href = swapLocale(pathname, option.value);
 
         return (
           <span key={option.value} className="flex items-center gap-1.5">
@@ -29,20 +36,19 @@ export function LanguageSwitcher({
                 /
               </span>
             ) : null}
-            <form action={setLocale}>
-              <input type="hidden" name="locale" value={option.value} />
-              <button
-                type="submit"
-                aria-pressed={active}
-                className={
-                  active
-                    ? "cursor-default text-white"
-                    : "text-white/48 transition-colors hover:text-white"
-                }
+            {active ? (
+              <span aria-current="true" className="cursor-default text-white">
+                {option.label}
+              </span>
+            ) : (
+              <Link
+                href={href}
+                className="text-white/48 transition-colors hover:text-white"
+                hrefLang={option.value === "cnr" ? "cnr" : "en"}
               >
                 {option.label}
-              </button>
-            </form>
+              </Link>
+            )}
           </span>
         );
       })}

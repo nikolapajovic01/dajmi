@@ -3,23 +3,36 @@ import { ContactForm } from "@/components/contact-form";
 import { Footer } from "@/components/footer";
 import { OpeningHours } from "@/components/opening-hours";
 import { PageBanner } from "@/components/page-banner";
-import { getDictionary } from "@/lib/i18n/locale";
+import { getDictionary, requireLocale } from "@/lib/i18n/locale";
+import { localeAlternates } from "@/lib/i18n/metadata";
 import { CONTACTS, LOCATION } from "@/lib/site-config";
 
+const PATH = "/kontakt";
 const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(LOCATION.mapQuery)}`;
 const MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(LOCATION.mapQuery)}&output=embed`;
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { dict } = await getDictionary();
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const locale = requireLocale((await params).locale);
+  const { dict } = getDictionary(locale);
 
   return {
     title: dict.contactPage.meta.title,
     description: dict.contactPage.meta.description,
+    alternates: localeAlternates(locale, PATH),
   };
 }
 
-export default async function KontaktPage() {
-  const { locale, dict } = await getDictionary();
+export default async function KontaktPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const locale = requireLocale((await params).locale);
+  const { dict } = getDictionary(locale);
   const copy = dict.contactPage;
 
   return (
@@ -28,7 +41,7 @@ export default async function KontaktPage() {
         <PageBanner
           dict={dict}
           locale={locale}
-          currentPath="/kontakt"
+          currentPath={PATH}
           kicker={copy.kicker}
           title={copy.title}
           lead={copy.lead}

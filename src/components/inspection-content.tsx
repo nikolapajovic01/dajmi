@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import { withLocale } from "@/lib/i18n/paths";
 import { useReveal } from "@/lib/use-reveal";
 import { CONTACTS } from "@/lib/site-config";
 import { OpeningHours } from "./opening-hours";
@@ -14,9 +15,11 @@ const CARD_DELAY = ["", "about-reveal-delay-1", "about-reveal-delay-2"] as const
 export function InspectionContent({
   copy,
   hours,
+  locale,
 }: {
   copy: Dictionary["inspectionPage"];
   hours: Dictionary["hours"];
+  locale: Locale;
 }) {
   const heroRef = useReveal<HTMLElement>(0.18);
   const offeringsRef = useReveal<HTMLElement>(0.16);
@@ -122,6 +125,7 @@ export function InspectionContent({
           href="/usluge"
           cta={copy.service.cta}
           tone="dark"
+          locale={locale}
         />
       </section>
 
@@ -159,7 +163,7 @@ export function InspectionContent({
               {copy.hero.call}
             </a>
             <Link
-              href="/kontakt"
+              href={withLocale(locale, "/kontakt")}
               className="border border-white/45 px-8 py-[15px] text-center font-display text-sm font-semibold tracking-[0.04em] transition-colors hover:bg-white/12 min-[821px]:px-9 min-[821px]:py-4"
             >
               {copy.contact.book}

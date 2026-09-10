@@ -1,11 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LOCATION, PHONE } from "@/lib/site-config";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import { withLocale } from "@/lib/i18n/paths";
 
 const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(LOCATION.mapQuery)}`;
 
-export function ContactLocation({ copy }: { copy: Dictionary["cta"] }) {
+export function ContactLocation({
+  copy,
+  locale,
+}: {
+  copy: Dictionary["cta"];
+  locale: Locale;
+}) {
   return (
     <section
       aria-labelledby="contact-cta-title"
@@ -43,7 +50,7 @@ export function ContactLocation({ copy }: { copy: Dictionary["cta"] }) {
 
         <div className="mt-6 flex flex-col gap-3 min-[600px]:flex-row min-[600px]:items-center min-[821px]:mt-6 min-[821px]:gap-4">
           <Link
-            href="/kontakt"
+            href={withLocale(locale, "/kontakt")}
             className="bg-white px-8 py-[15px] text-center font-display text-sm font-semibold tracking-[0.04em] text-navy transition-colors hover:bg-navy-accent hover:text-white min-[821px]:px-9 min-[821px]:py-4"
           >
             {copy.book}

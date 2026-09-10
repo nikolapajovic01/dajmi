@@ -1,7 +1,6 @@
 export const locales = ["cnr", "en"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "cnr";
-export const LOCALE_COOKIE = "dajmi-locale";
 
 export function isLocale(value: string | undefined | null): value is Locale {
   return value === "cnr" || value === "en";
@@ -49,10 +48,10 @@ const cnr = {
     prev: "Prethodna fotografija",
     next: "Sljedeća fotografija",
     photos: {
-      building: "Glavna zgrada D.A.J.M.I. ovlašćenog Škoda servisa",
-      complex: "D.A.J.M.I. kompleks u Herceg Novom iz vazduha",
+      building: "D.A.J.M.I. Autocentar i Škoda servis u sumrak",
+      complex: "Široki kadar D.A.J.M.I. kompleksa u Sutorini",
       workshop: "Savremeno opremljena D.A.J.M.I. servisna radionica",
-      expandBuilding: "Proširi fotografiju glavne D.A.J.M.I. zgrade",
+      expandBuilding: "Proširi fotografiju D.A.J.M.I. Autocentra",
       expandComplex: "Proširi fotografiju D.A.J.M.I. kompleksa",
       expandWorkshop: "Proširi fotografiju D.A.J.M.I. servisne radionice",
     },
@@ -70,8 +69,8 @@ const cnr = {
           "Pouzdan gradski i međugradski prijevoz, dostupan svakog dana za siguran dolazak na svaku adresu.",
         href: "https://taximore.com",
         cta: "Upoznajte Taxi More",
-        image: "/taximore/IMG_4317.webp",
-        alt: "Taxi More BYD vozila ispred kompleksa u Sutorini",
+        image: "/galerija/AQ5A9067.webp",
+        alt: "Taxi More BYD flota na punjenju u Sutorini",
       },
       {
         number: "02",
@@ -80,8 +79,8 @@ const cnr = {
           "Ovlašćeni Škoda servis sa sertifikovanim tehničarima, originalnim dijelovima i savremenom dijagnostikom.",
         href: "/usluge",
         cta: "Istražite servis",
-        image: "/prilaz.webp",
-        alt: "Prilaz D.A.J.M.I. Škoda servisu",
+        image: "/galerija/AQ5A8917.webp",
+        alt: "Fasada ovlašćenog D.A.J.M.I. Škoda servisa",
       },
       {
         number: "03",
@@ -284,6 +283,12 @@ const cnr = {
     lead: "Više od dvije decenije u Herceg Novom. Taxi More, ovlašćeni Škoda servis i tehnički pregled - u Sutorini.",
     story:
       "Ovlašćeni smo servisni partner za Škodu, a radionicu otvaramo i svim drugim markama. Tehničari se usavršavaju u trening centrima uvoznika. U radionici je devet mjesta sa dizalicama, originalni dijelovi i licencirani alati - garancija ostaje i u garantnom periodu.",
+    place: {
+      kicker: "Škoda",
+      title: "Ovlašćeni partner. Povjerenje kroz godine.",
+      body: "Ovlašćeni smo servisni partner za Škodu - sa sertifikovanim tehničarima, originalnim dijelovima i licenciranim alatima. Više od dvije decenije u Herceg Novom grade povjerenje vozača. To je standard koji držimo svaki dan.",
+      alt: "D.A.J.M.I. Autocentar i Škoda servis u sumrak",
+    },
     photo: {
       kicker: "Kompleks",
       title: "Sutorina, Herceg Novi.",
@@ -323,28 +328,60 @@ const cnr = {
     },
     photos: {
       building: {
-        caption: "Zgrada",
-        alt: "Glavna zgrada D.A.J.M.I. ovlašćenog Škoda servisa",
+        caption: "Autocentar",
+        alt: "D.A.J.M.I. Autocentar sa staklenom fasadom u Sutorini",
       },
-      hall: {
-        caption: "Servisna hala",
-        alt: "Servisna hala D.A.J.M.I. kompleksa u Sutorini",
+      showroomGlass: {
+        caption: "Salon",
+        alt: "Staklena fasada D.A.J.M.I. Autocentra sa vozilima u salonu",
+      },
+      complexWide: {
+        caption: "Kompleks",
+        alt: "Široki kadar D.A.J.M.I. kompleksa u Sutorini",
+      },
+      serviceFacade: {
+        caption: "Škoda servis",
+        alt: "Fasada ovlašćenog D.A.J.M.I. Škoda servisa",
+      },
+      dusk: {
+        caption: "Veče",
+        alt: "D.A.J.M.I. Autocentar i Škoda servis u sumrak",
+      },
+      duskFacade: {
+        caption: "Autocentar noću",
+        alt: "Osvijetljeni natpis D.A.J.M.I. Autocentar u sumrak",
       },
       aerial: {
-        caption: "Kompleks",
+        caption: "Iz vazduha",
         alt: "D.A.J.M.I. kompleks u Herceg Novom iz vazduha",
       },
       aerialPark: {
         caption: "Parking",
         alt: "D.A.J.M.I. kompleks i parking u Sutorini iz vazduha",
       },
-      entrance: {
-        caption: "Prilaz",
-        alt: "Prilaz D.A.J.M.I. Škoda servisu",
+      showroom: {
+        caption: "Škoda u salonu",
+        alt: "Bijela Škoda u salonu D.A.J.M.I. Autocentra",
+      },
+      inspectionSign: {
+        caption: "Tehnički pregled",
+        alt: "Natpis Tehnički pregled na fasadi D.A.J.M.I. kompleksa",
+      },
+      wayfinding: {
+        caption: "Putokaz",
+        alt: "Putokaz za informacije, prijem vozila i servis",
+      },
+      skodaTotem: {
+        caption: "Škoda totem",
+        alt: "Osvijetljeni Škoda Service totem kod D.A.J.M.I. kompleksa",
       },
       inspection: {
-        caption: "Tehnički pregled",
+        caption: "Pregled",
         alt: "Tehnički pregled vozila u D.A.J.M.I. centru",
+      },
+      hall: {
+        caption: "Servisna hala",
+        alt: "Servisna hala D.A.J.M.I. kompleksa u Sutorini",
       },
       workshop: {
         caption: "Radionica",
@@ -366,10 +403,6 @@ const cnr = {
         caption: "Limarsko-farbarska",
         alt: "Limarsko-farbarska radionica D.A.J.M.I. sa vozilom na dizalici",
       },
-      desk: {
-        caption: "Desk",
-        alt: "Servisni desk i zona čekanja u D.A.J.M.I.",
-      },
       climate: {
         caption: "Auto klima",
         alt: "Servis auto klime u D.A.J.M.I. radionici",
@@ -382,29 +415,53 @@ const cnr = {
         caption: "Lakirnica",
         alt: "Mješanje laka u D.A.J.M.I. limarsko-farbarskoj radionici",
       },
-      taxi: {
-        caption: "Taxi More",
-        alt: "Taxi More vozilo ispred zgrade sa brojem 19730",
-      },
       fleet: {
         caption: "Flota",
-        alt: "Taxi More BYD flota na parkingu u Sutorini",
+        alt: "Taxi More električna flota ispred D.A.J.M.I. kompleksa",
       },
-      charging: {
+      solarFleet: {
+        caption: "Solarni nadstrešak",
+        alt: "Električna vozila na punjačima ispod solarnog nadstreška",
+      },
+      lineup: {
+        caption: "BYD flota",
+        alt: "Red Taxi More BYD vozila na punjenju u Sutorini",
+      },
+      chargeDay: {
         caption: "Punjenje",
-        alt: "Taxi More BYD na punjaču u Sutorini",
+        alt: "Električno vozilo na Schneider punjaču danju",
+      },
+      chargeWall: {
+        caption: "Zidni punjač",
+        alt: "Vozilo na zidnom punjaču u zelenom parkirnom mjestu",
+      },
+      chargeFast: {
+        caption: "Brzi punjač",
+        alt: "Schneider StarCharge Fast punjač u D.A.J.M.I. kompleksu",
+      },
+      chargeGreen: {
+        caption: "Punjači",
+        alt: "Red brzih punjača sa zelenim svjetlom ispod nadstreška",
+      },
+      chargeNight: {
+        caption: "Noćno punjenje",
+        alt: "Schneider punjač noću uz Taxi More vozilo",
+      },
+      chargeTaxi: {
+        caption: "Taxi More",
+        alt: "Taxi More vozilo pored punjača u Sutorini",
+      },
+      nightFleet: {
+        caption: "Flota noću",
+        alt: "Taxi More flota na punjenju noću",
+      },
+      wash: {
+        caption: "Perionica",
+        alt: "Taxi More vozilo u automatskoj perionici",
       },
       interior: {
         caption: "Kabina",
-        alt: "Unutrašnjost Taxi More BYD vozila",
-      },
-      dispatch: {
-        caption: "19730",
-        alt: "Taxi More flota ispred zgrade sa brojem 19730",
-      },
-      lineup: {
-        caption: "Vozila",
-        alt: "Red Taxi More BYD vozila u Sutorini",
+        alt: "Unutrašnjost BYD vozila sa digitalnim displejom",
       },
     },
     cta: {
@@ -440,7 +497,7 @@ const cnr = {
       {
         heading: "Kolačići",
         body: [
-          "Sajt postavlja samo kolačić dajmi-locale, da zapamti izbor jezika (MNE ili EN). Traje do godinu dana i potreban je za rad prekidača jezika.",
+          "Sajt ne postavlja kolačiće za jezik, analitiku, oglase ni praćenje. Jezik birate preko URL-a (MNE ili /en).",
           "Ne koristimo kolačiće za analitiku, oglase ni praćenje.",
         ],
       },
@@ -590,10 +647,10 @@ const en = {
     prev: "Previous photograph",
     next: "Next photograph",
     photos: {
-      building: "Main building of the D.A.J.M.I. authorised Škoda service",
-      complex: "Aerial view of the D.A.J.M.I. complex in Herceg Novi",
+      building: "D.A.J.M.I. Autocentar and Škoda service at dusk",
+      complex: "Wide view of the D.A.J.M.I. complex in Sutorina",
       workshop: "Fully equipped D.A.J.M.I. service workshop",
-      expandBuilding: "Enlarge photo of the main D.A.J.M.I. building",
+      expandBuilding: "Enlarge photo of the D.A.J.M.I. Autocentar",
       expandComplex: "Enlarge photo of the D.A.J.M.I. complex",
       expandWorkshop: "Enlarge photo of the D.A.J.M.I. workshop",
     },
@@ -611,8 +668,8 @@ const en = {
           "Reliable city and intercity transport, available every day for a safe arrival at every address.",
         href: "https://taximore.com",
         cta: "Discover Taxi More",
-        image: "/taximore/IMG_4317.webp",
-        alt: "Taxi More BYD vehicles in front of the complex in Sutorina",
+        image: "/galerija/AQ5A9067.webp",
+        alt: "Taxi More BYD fleet charging in Sutorina",
       },
       {
         number: "02",
@@ -621,8 +678,8 @@ const en = {
           "Authorised Škoda service with certified technicians, genuine parts and modern diagnostics.",
         href: "/usluge",
         cta: "Explore the workshop",
-        image: "/prilaz.webp",
-        alt: "Approach to the D.A.J.M.I. Škoda service",
+        image: "/galerija/AQ5A8917.webp",
+        alt: "Facade of the authorised D.A.J.M.I. Škoda service",
       },
       {
         number: "03",
@@ -825,6 +882,12 @@ const en = {
     lead: "More than two decades in Herceg Novi. Taxi More, authorised Škoda service and technical inspection - in Sutorina.",
     story:
       "We are an authorised service partner for Škoda, and the workshop is open to every other brand as well. Technicians train at importer centres. The workshop has nine lift bays, genuine parts and licensed tools - warranty cover stays in place during the warranty period.",
+    place: {
+      kicker: "Škoda",
+      title: "Authorised partner. Trust built over years.",
+      body: "We are an authorised service partner for Škoda - with certified technicians, genuine parts and licensed tools. More than two decades in Herceg Novi have earned drivers’ trust. That is the standard we keep every day.",
+      alt: "D.A.J.M.I. Autocentar and Škoda service at dusk",
+    },
     photo: {
       kicker: "The complex",
       title: "Sutorina, Herceg Novi.",
@@ -864,28 +927,60 @@ const en = {
     },
     photos: {
       building: {
-        caption: "Building",
-        alt: "Main building of the authorised D.A.J.M.I. Škoda service",
+        caption: "Auto centre",
+        alt: "D.A.J.M.I. Autocentar with a glass facade in Sutorina",
       },
-      hall: {
-        caption: "Service hall",
-        alt: "Service hall of the D.A.J.M.I. complex in Sutorina",
+      showroomGlass: {
+        caption: "Showroom",
+        alt: "Glass facade of the D.A.J.M.I. Autocentar with cars in the showroom",
+      },
+      complexWide: {
+        caption: "The complex",
+        alt: "Wide view of the D.A.J.M.I. complex in Sutorina",
+      },
+      serviceFacade: {
+        caption: "Škoda service",
+        alt: "Facade of the authorised D.A.J.M.I. Škoda service",
+      },
+      dusk: {
+        caption: "Evening",
+        alt: "D.A.J.M.I. Autocentar and Škoda service at dusk",
+      },
+      duskFacade: {
+        caption: "Autocentar at night",
+        alt: "Illuminated D.A.J.M.I. Autocentar sign at dusk",
       },
       aerial: {
-        caption: "The complex",
+        caption: "From the air",
         alt: "Aerial view of the D.A.J.M.I. complex in Herceg Novi",
       },
       aerialPark: {
         caption: "Parking",
         alt: "Aerial view of the D.A.J.M.I. complex and parking in Sutorina",
       },
-      entrance: {
-        caption: "Approach",
-        alt: "Approach to the D.A.J.M.I. Škoda service",
+      showroom: {
+        caption: "Škoda in the showroom",
+        alt: "A white Škoda in the D.A.J.M.I. Autocentar showroom",
+      },
+      inspectionSign: {
+        caption: "Technical inspection",
+        alt: "Technical inspection sign on the D.A.J.M.I. complex facade",
+      },
+      wayfinding: {
+        caption: "Wayfinding",
+        alt: "Wayfinding sign for information, vehicle reception and service",
+      },
+      skodaTotem: {
+        caption: "Škoda totem",
+        alt: "Illuminated Škoda Service totem at the D.A.J.M.I. complex",
       },
       inspection: {
-        caption: "Technical inspection",
+        caption: "Inspection",
         alt: "Vehicle technical inspection at the D.A.J.M.I. centre",
+      },
+      hall: {
+        caption: "Service hall",
+        alt: "Service hall of the D.A.J.M.I. complex in Sutorina",
       },
       workshop: {
         caption: "Workshop",
@@ -907,10 +1002,6 @@ const en = {
         caption: "Bodywork and paint",
         alt: "D.A.J.M.I. bodywork and paint workshop with a vehicle on a lift",
       },
-      desk: {
-        caption: "Desk",
-        alt: "Service desk and waiting area at D.A.J.M.I.",
-      },
       climate: {
         caption: "Air conditioning",
         alt: "Air-conditioning service in the D.A.J.M.I. workshop",
@@ -923,29 +1014,53 @@ const en = {
         caption: "Paint shop",
         alt: "Paint mixing in the D.A.J.M.I. bodywork and paint workshop",
       },
-      taxi: {
-        caption: "Taxi More",
-        alt: "Taxi More vehicle in front of the building with number 19730",
-      },
       fleet: {
         caption: "Fleet",
-        alt: "Taxi More BYD fleet in the parking lot in Sutorina",
+        alt: "Taxi More electric fleet in front of the D.A.J.M.I. complex",
       },
-      charging: {
+      solarFleet: {
+        caption: "Solar canopy",
+        alt: "Electric vehicles at chargers under a solar canopy",
+      },
+      lineup: {
+        caption: "BYD fleet",
+        alt: "A row of Taxi More BYD vehicles charging in Sutorina",
+      },
+      chargeDay: {
         caption: "Charging",
-        alt: "Taxi More BYD at a charger in Sutorina",
+        alt: "An electric vehicle at a Schneider charger during the day",
+      },
+      chargeWall: {
+        caption: "Wall charger",
+        alt: "A vehicle at a wall charger in a green parking bay",
+      },
+      chargeFast: {
+        caption: "Fast charger",
+        alt: "Schneider StarCharge Fast charger at the D.A.J.M.I. complex",
+      },
+      chargeGreen: {
+        caption: "Chargers",
+        alt: "A row of fast chargers with green lights under a canopy",
+      },
+      chargeNight: {
+        caption: "Night charging",
+        alt: "A Schneider charger at night next to a Taxi More vehicle",
+      },
+      chargeTaxi: {
+        caption: "Taxi More",
+        alt: "A Taxi More vehicle beside a charger in Sutorina",
+      },
+      nightFleet: {
+        caption: "Fleet at night",
+        alt: "Taxi More fleet charging at night",
+      },
+      wash: {
+        caption: "Car wash",
+        alt: "A Taxi More vehicle in the automatic car wash",
       },
       interior: {
         caption: "Cabin",
-        alt: "Interior of a Taxi More BYD vehicle",
-      },
-      dispatch: {
-        caption: "19730",
-        alt: "Taxi More fleet in front of the building with number 19730",
-      },
-      lineup: {
-        caption: "Vehicles",
-        alt: "A row of Taxi More BYD vehicles in Sutorina",
+        alt: "Interior of a BYD vehicle with a digital display",
       },
     },
     cta: {
@@ -981,7 +1096,7 @@ const en = {
       {
         heading: "Cookies",
         body: [
-          "The site sets only the dajmi-locale cookie, to remember the language (MNE or EN). It lasts up to one year and is needed for the language switcher.",
+          "The site does not set cookies for language, analytics, ads or tracking. You choose the language via the URL (MNE or /en).",
           "We do not use cookies for analytics, ads or tracking.",
         ],
       },

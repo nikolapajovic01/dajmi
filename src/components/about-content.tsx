@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { useReveal } from "@/lib/use-reveal";
 import { PHONE } from "@/lib/site-config";
+import { withLocale } from "@/lib/i18n/paths";
 import { AboutVideo } from "./about-video";
+import { ServiceChapter } from "./service-chapter";
 
 const UNIT_DELAY = ["", "about-reveal-delay-1", "about-reveal-delay-2"] as const;
 
@@ -13,10 +15,12 @@ export function AboutContent({
   about,
   units,
   copy,
+  locale,
 }: {
   about: Dictionary["about"];
   units: Dictionary["units"];
   copy: Dictionary["aboutPage"];
+  locale: Locale;
 }) {
   const storyRef = useReveal<HTMLElement>(0.18);
   const videoRef = useReveal<HTMLElement>(0.16);
@@ -54,6 +58,17 @@ export function AboutContent({
             {copy.story}
           </p>
         </div>
+      </section>
+
+      <section aria-label={copy.place.kicker} className="bg-[#f4f3ef] text-navy">
+        <ServiceChapter
+          lead={copy.place.kicker}
+          name={copy.place.title}
+          body={copy.place.body}
+          alt={copy.place.alt}
+          src="/galerija/AQ5A9187.webp"
+          reverse
+        />
       </section>
 
       <section ref={videoRef} aria-labelledby="about-video-title" className="bg-[#f4f3ef] text-navy">
@@ -108,7 +123,7 @@ export function AboutContent({
                     {unit.description}
                   </p>
                   <Link
-                    href={href}
+                    href={withLocale(locale, href)}
                     {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
                     className="group mt-4 inline-flex items-center gap-3 border-b border-navy pb-1.5 font-display text-xs font-semibold tracking-[0.08em] uppercase transition-colors hover:border-navy-accent hover:text-navy-accent"
                   >
@@ -148,7 +163,7 @@ export function AboutContent({
 
           <div className="about-copy-reveal about-reveal-delay-1 flex flex-col gap-3 min-[600px]:flex-row min-[600px]:items-center">
             <Link
-              href="/kontakt"
+              href={withLocale(locale, "/kontakt")}
               className="bg-white px-8 py-[15px] text-center font-display text-sm font-semibold tracking-[0.04em] text-navy transition-colors hover:bg-navy-accent hover:text-white min-[821px]:px-9 min-[821px]:py-4"
             >
               {copy.cta.book}

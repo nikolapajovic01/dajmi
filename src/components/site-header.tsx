@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PHONE } from "@/lib/site-config";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import { withLocale } from "@/lib/i18n/paths";
 import { LanguageSwitcher } from "./language-switcher";
 import { Logo } from "./logo";
 import { MobileNav } from "./mobile-nav";
@@ -16,11 +17,16 @@ export function SiteHeader({
   currentPath: string;
   className?: string;
 }) {
+  const links = dict.nav.links.map((link) => ({
+    ...link,
+    href: withLocale(locale, link.href),
+  }));
+
   return (
     <header
       className={`relative z-[3] flex items-center justify-between gap-8 px-[22px] py-3.5 min-[821px]:justify-start min-[821px]:gap-8 min-[821px]:border-b min-[821px]:border-white/16 min-[821px]:px-10 min-[821px]:py-4 min-[1181px]:gap-14 min-[1181px]:px-[72px] ${className}`}
     >
-      <Logo ariaLabel={dict.logoHome} />
+      <Logo locale={locale} ariaLabel={dict.logoHome} />
 
       <nav
         aria-label={dict.nav.main}
@@ -29,7 +35,7 @@ export function SiteHeader({
         {dict.nav.links.map((link) => (
           <Link
             key={link.href}
-            href={link.href}
+            href={withLocale(locale, link.href)}
             aria-current={link.href === currentPath ? "page" : undefined}
             className="text-white/78 transition-colors hover:text-white aria-[current=page]:text-white"
           >
@@ -47,7 +53,7 @@ export function SiteHeader({
           {PHONE.display}
         </a>
         <MobileNav
-          links={dict.nav.links}
+          links={links}
           labels={{
             open: dict.nav.open,
             close: dict.nav.close,

@@ -3,19 +3,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { useReveal } from "@/lib/use-reveal";
+import { withLocale } from "@/lib/i18n/paths";
 
 const PHOTO_SRC = {
-  building: "/dajmi22.webp",
-  complex: "/dajmi11.webp",
+  building: "/galerija/AQ5A9187.webp",
+  complex: "/galerija/AQ5A9003.webp",
   workshop: "/dajmi66.webp",
 } as const;
 
 const PHOTO_ORDER = ["building", "complex", "workshop"] as const;
 type PhotoKey = (typeof PHOTO_ORDER)[number];
 
-export function AboutPreview({ copy }: { copy: Dictionary["about"] }) {
+export function AboutPreview({
+  copy,
+  locale,
+}: {
+  copy: Dictionary["about"];
+  locale: Locale;
+}) {
   const sectionRef = useReveal<HTMLElement>(0.18);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const touchStartX = useRef<number | null>(null);
@@ -103,7 +110,7 @@ export function AboutPreview({ copy }: { copy: Dictionary["about"] }) {
             </p>
 
             <Link
-              href="/o-nama"
+              href={withLocale(locale, "/o-nama")}
               className="group mt-9 inline-flex items-center gap-5 border-b border-navy pb-2.5 font-display text-sm font-semibold tracking-[0.06em] uppercase transition-colors hover:border-navy-accent hover:text-navy-accent min-[821px]:mt-8"
             >
               {copy.cta}

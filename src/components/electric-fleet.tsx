@@ -10,7 +10,7 @@ export function ElectricFleet({ copy }: { copy: Dictionary["fleet"] }) {
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image
-          src="/taximore/IMG_4311.webp"
+          src="/galerija/AQ5A9022.webp"
           alt=""
           fill
           sizes="100vw"

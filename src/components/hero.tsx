@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import { withLocale } from "@/lib/i18n/paths";
 import { SiteHeader } from "./site-header";
 
 export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
@@ -44,7 +45,7 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
           </p>
 
           <Link
-            href="/kontakt"
+            href={withLocale(locale, "/kontakt")}
             className="mt-7 block bg-navy-accent px-[34px] py-[17px] text-center font-display text-base font-semibold tracking-[0.03em] text-white transition-colors hover:bg-white hover:text-navy min-[821px]:mt-11 min-[821px]:inline-block min-[821px]:py-[18px]"
           >
             {dict.hero.book}

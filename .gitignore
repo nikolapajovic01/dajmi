@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw photo dump (compress into public/galerija before use)
+/public/nove-slike/
+
+# local preview / scratch images
+.tmp-preview/
+.tmp-*.png
+.tmp-*.jpg
