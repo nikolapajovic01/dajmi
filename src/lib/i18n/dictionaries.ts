@@ -420,7 +420,7 @@ const cnr = {
         alt: "Taxi More električna flota ispred D.A.J.M.I. kompleksa",
       },
       solarFleet: {
-        caption: "Solarni nadstrešak",
+        caption: "Solarni punjači",
         alt: "Električna vozila na punjačima ispod solarnog nadstreška",
       },
       lineup: {
@@ -1019,7 +1019,7 @@ const en = {
         alt: "Taxi More electric fleet in front of the D.A.J.M.I. complex",
       },
       solarFleet: {
-        caption: "Solar canopy",
+        caption: "Solar chargers",
         alt: "Electric vehicles at chargers under a solar canopy",
       },
       lineup: {
