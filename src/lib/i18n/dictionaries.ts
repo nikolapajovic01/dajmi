@@ -8,9 +8,9 @@ export function isLocale(value: string | undefined | null): value is Locale {
 
 const cnr = {
   meta: {
-    title: "D.A.J.M.I. - Ovlašćeni Škoda servis, Herceg Novi",
+    title: "D.A.J.M.I. - Auto servis, tehnički pregled, Škoda servis | Herceg Novi",
     description:
-      "Ovlašćeni Škoda servis u Herceg Novom. Dugogodišnja tradicija, originalni dijelovi i sertifikovani tehničari.",
+      "Auto servis, tehnički pregled i ovlašćeni Škoda servis u Herceg Novom. Dugogodišnja tradicija, originalni dijelovi i sertifikovani tehničari.",
     ogAlt: "Ulaz u D.A.J.M.I. kompleks u Sutorini, Herceg Novi",
   },
   logoHome: "D.A.J.M.I. - početna",
@@ -130,7 +130,7 @@ const cnr = {
   },
   contactPage: {
     meta: {
-      title: "Kontakt - D.A.J.M.I.",
+      title: "Kontakt - D.A.J.M.I., Herceg Novi",
       description:
         "Kontaktirajte D.A.J.M.I. u Herceg Novom: telefoni i emailovi po odjeljenjima, radno vrijeme, lokacija i kontakt forma.",
     },
@@ -171,7 +171,7 @@ const cnr = {
   },
   servicesPage: {
     meta: {
-      title: "Usluge - D.A.J.M.I.",
+      title: "Usluge - Herceg Novi | D.A.J.M.I.",
       description:
         "Ovlašćeni Škoda servis u Herceg Novom: mehanika, elektrika, dijagnostika, reglaža trapa, vulkanizer i limarsko-farbarska radionica za sve marke.",
     },
@@ -221,7 +221,7 @@ const cnr = {
   },
   inspectionPage: {
     meta: {
-      title: "Tehnički pregled - D.A.J.M.I.",
+      title: "Tehnički pregled - Herceg Novi | D.A.J.M.I.",
       description:
         "Tehnički pregled automobila i motora u Herceg Novom: redovni i vanredni pregled, registracija i osiguranje.",
     },
@@ -275,7 +275,7 @@ const cnr = {
   },
   aboutPage: {
     meta: {
-      title: "O nama - D.A.J.M.I.",
+      title: "O nama - D.A.J.M.I., Herceg Novi",
       description:
         "D.A.J.M.I. u Herceg Novom: više od dvije decenije, ovlašćeni Škoda servis, tehnički pregled i Taxi More na jednom mjestu.",
     },
@@ -608,9 +608,9 @@ const cnr = {
 
 const en = {
   meta: {
-    title: "D.A.J.M.I. - Authorised Škoda service, Herceg Novi",
+    title: "D.A.J.M.I. - Auto Service, Vehicle Inspection, Škoda Service | Herceg Novi",
     description:
-      "Authorised Škoda service in Herceg Novi. Long-standing tradition, genuine parts and certified technicians.",
+      "Auto service, vehicle inspection and authorised Škoda service in Herceg Novi. Long-standing tradition, genuine parts and certified technicians.",
     ogAlt: "Entrance to the D.A.J.M.I. complex in Sutorina, Herceg Novi",
   },
   logoHome: "D.A.J.M.I. - home",
@@ -730,7 +730,7 @@ const en = {
   },
   contactPage: {
     meta: {
-      title: "Contact - D.A.J.M.I.",
+      title: "Contact - D.A.J.M.I., Herceg Novi",
       description:
         "Contact D.A.J.M.I. in Herceg Novi: department phone numbers and emails, opening hours, location and a contact form.",
     },
@@ -771,7 +771,7 @@ const en = {
   },
   servicesPage: {
     meta: {
-      title: "Services - D.A.J.M.I.",
+      title: "Services - Herceg Novi | D.A.J.M.I.",
       description:
         "Authorised Škoda service in Herceg Novi: mechanics, electrics, diagnostics, wheel alignment, tyres and a bodywork and paint workshop for all brands.",
     },
@@ -821,7 +821,7 @@ const en = {
   },
   inspectionPage: {
     meta: {
-      title: "Technical inspection - D.A.J.M.I.",
+      title: "Technical Inspection - Herceg Novi | D.A.J.M.I.",
       description:
         "Technical inspection of cars and motorcycles in Herceg Novi: regular and extraordinary inspection, registration and insurance.",
     },
@@ -875,7 +875,7 @@ const en = {
   },
   aboutPage: {
     meta: {
-      title: "About - D.A.J.M.I.",
+      title: "About - D.A.J.M.I., Herceg Novi",
       description:
         "D.A.J.M.I. in Herceg Novi: more than two decades, authorised Škoda service, technical inspection and Taxi More in one place.",
     },
