@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   redirects() {
     return [
       {
+        // The old single-page site's only URL indexed by Google — preserve its ranking.
+        source: "/index.html",
+        destination: "/",
+        permanent: true,
+      },
+      {
         source: "/zakazivanje",
         destination: "/kontakt",
         permanent: false,
