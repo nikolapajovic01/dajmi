@@ -9,14 +9,16 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
       <div className="absolute inset-0" aria-hidden="true">
         <video
           className="size-full object-cover object-center motion-reduce:hidden"
-          src="/hero.mp4"
           poster="/hero-poster.jpg"
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-        />
+        >
+          <source src="/hero-mobile.mp4" media="(max-width: 820px)" />
+          <source src="/hero.mp4" />
+        </video>
       </div>
       <div
         aria-hidden="true"
