@@ -21,9 +21,6 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(SITE.url),
     applicationName: SITE.name,
-    icons: {
-      icon: "/dajmi-logo-transparent.png",
-    },
     ...pageMetadata(locale, "/", dict.meta, dict.meta.ogAlt),
   };
 }
