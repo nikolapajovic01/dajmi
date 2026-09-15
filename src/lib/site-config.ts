@@ -68,4 +68,8 @@ export const CONTACTS = [
     phone: { display: "+382 31 350 756", href: "tel:+38231350756" },
     email: { display: "tehnickipregled@dajmi.me", href: "mailto:tehnickipregled@dajmi.me" },
   },
+  {
+    key: "hiring",
+    phone: { display: "+382 67 679 730", href: "tel:+38267679730" },
+  },
 ] as const;

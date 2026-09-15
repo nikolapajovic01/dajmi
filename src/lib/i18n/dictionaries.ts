@@ -144,6 +144,7 @@ const cnr = {
       service: "Servis",
       accounting: "Računovodstvo",
       inspection: "Tehnički pregled",
+      hiring: "Zapošljavanje",
     },
     location: {
       title: "Gdje nas pronaći",
@@ -743,6 +744,7 @@ const en = {
       service: "Service",
       accounting: "Accounting",
       inspection: "Technical inspection",
+      hiring: "Careers",
     },
     location: {
       title: "Where to find us",

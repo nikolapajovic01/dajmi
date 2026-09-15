@@ -7,6 +7,10 @@ function contactByKey(key: (typeof CONTACTS)[number]["key"]) {
   return CONTACTS.find((entry) => entry.key === key)!;
 }
 
+function contactEmail(contact: (typeof CONTACTS)[number]) {
+  return "email" in contact ? contact.email.display : undefined;
+}
+
 export function localBusinessJsonLd(dict: Dictionary) {
   const service = contactByKey("service");
   const inspection = contactByKey("inspection");
@@ -55,13 +59,13 @@ export function localBusinessJsonLd(dict: Dictionary) {
         "@type": "AutoRepair",
         name: dict.contactPage.channels.service,
         telephone: service.phone.href.replace("tel:", ""),
-        email: service.email.display,
+        email: contactEmail(service),
       },
       {
         "@type": "AutomotiveBusiness",
         name: dict.contactPage.channels.inspection,
         telephone: inspection.phone.href.replace("tel:", ""),
-        email: inspection.email.display,
+        email: contactEmail(inspection),
       },
     ],
   };

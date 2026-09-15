@@ -15,7 +15,10 @@ function isEnquiryDepartment(value: string): value is EnquiryDepartment {
 
 function departmentMailto(key: EnquiryDepartment) {
   const contact = CONTACTS.find((entry) => entry.key === key);
-  return contact?.email.href ?? EMAIL.href;
+  if (contact && "email" in contact) {
+    return contact.email.href;
+  }
+  return EMAIL.href;
 }
 
 export function ContactForm({ copy }: { copy: Dictionary["contactPage"]["form"] }) {

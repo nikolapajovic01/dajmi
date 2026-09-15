@@ -76,12 +76,14 @@ export default async function KontaktPage({
                         >
                           {contact.phone.display}
                         </a>
-                        <a
-                          href={contact.email.href}
-                          className="mt-2 inline-block text-[15px] text-navy/58 transition-colors hover:text-navy-accent"
-                        >
-                          {contact.email.display}
-                        </a>
+                        {"email" in contact && contact.email ? (
+                          <a
+                            href={contact.email.href}
+                            className="mt-2 inline-block text-[15px] text-navy/58 transition-colors hover:text-navy-accent"
+                          >
+                            {contact.email.display}
+                          </a>
+                        ) : null}
                       </div>
                     </li>
                   ))}
