@@ -44,7 +44,7 @@ export function LanguageSwitcher({
               <Link
                 href={href}
                 className="text-white/48 transition-colors hover:text-white"
-                hrefLang={option.value === "cnr" ? "cnr" : "en"}
+                hrefLang={option.value === "cnr" ? "sr-ME" : "en"}
               >
                 {option.label}
               </Link>

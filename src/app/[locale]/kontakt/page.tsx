@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import { OpeningHours } from "@/components/opening-hours";
 import { PageBanner } from "@/components/page-banner";
 import { getDictionary, requireLocale } from "@/lib/i18n/locale";
-import { localeAlternates } from "@/lib/i18n/metadata";
+import { pageMetadata } from "@/lib/i18n/metadata";
 import { CONTACTS, LOCATION } from "@/lib/site-config";
 
 const PATH = "/kontakt";
@@ -19,11 +19,7 @@ export async function generateMetadata({
   const locale = requireLocale((await params).locale);
   const { dict } = getDictionary(locale);
 
-  return {
-    title: dict.contactPage.meta.title,
-    description: dict.contactPage.meta.description,
-    alternates: localeAlternates(locale, PATH),
-  };
+  return pageMetadata(locale, PATH, dict.contactPage.meta, dict.meta.ogAlt);
 }
 
 export default async function KontaktPage({

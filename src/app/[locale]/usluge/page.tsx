@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 import { PageBanner } from "@/components/page-banner";
 import { ServicesContent } from "@/components/services-content";
 import { getDictionary, requireLocale } from "@/lib/i18n/locale";
-import { localeAlternates } from "@/lib/i18n/metadata";
+import { pageMetadata } from "@/lib/i18n/metadata";
 
 const PATH = "/usluge";
 
@@ -15,11 +15,7 @@ export async function generateMetadata({
   const locale = requireLocale((await params).locale);
   const { dict } = getDictionary(locale);
 
-  return {
-    title: dict.servicesPage.meta.title,
-    description: dict.servicesPage.meta.description,
-    alternates: localeAlternates(locale, PATH),
-  };
+  return pageMetadata(locale, PATH, dict.servicesPage.meta, dict.meta.ogAlt);
 }
 
 export default async function UslugePage({

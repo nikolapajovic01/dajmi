@@ -8,7 +8,7 @@ import {
 } from "./dictionaries";
 
 export function htmlLang(locale: Locale) {
-  return locale === "cnr" ? "cnr" : "en";
+  return locale === "cnr" ? "sr-ME" : "en";
 }
 
 export function resolveLocale(value: string | undefined | null): Locale {

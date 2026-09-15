@@ -24,8 +24,12 @@ export const EMAIL = {
 export const LOCATION = {
   city: "Herceg Novi",
   area: "Sutorina",
+  streetAddress: "Jadranska br. 63",
+  postalCode: "85347",
   country: "Crna Gora",
   mapQuery: "DAJMI Sutorina Herceg Novi",
+  latitude: 42.4688319,
+  longitude: 18.4820324,
 } as const;
 
 export const HOURS = {

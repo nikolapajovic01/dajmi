@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 import { InspectionContent } from "@/components/inspection-content";
 import { PageBanner } from "@/components/page-banner";
 import { getDictionary, requireLocale } from "@/lib/i18n/locale";
-import { localeAlternates } from "@/lib/i18n/metadata";
+import { pageMetadata } from "@/lib/i18n/metadata";
 
 const PATH = "/tehnicki-pregled";
 
@@ -15,11 +15,7 @@ export async function generateMetadata({
   const locale = requireLocale((await params).locale);
   const { dict } = getDictionary(locale);
 
-  return {
-    title: dict.inspectionPage.meta.title,
-    description: dict.inspectionPage.meta.description,
-    alternates: localeAlternates(locale, PATH),
-  };
+  return pageMetadata(locale, PATH, dict.inspectionPage.meta, dict.meta.ogAlt);
 }
 
 export default async function TehnickiPregledPage({

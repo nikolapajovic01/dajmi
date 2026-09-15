@@ -3,7 +3,7 @@ import { AboutContent } from "@/components/about-content";
 import { Footer } from "@/components/footer";
 import { PageBanner } from "@/components/page-banner";
 import { getDictionary, requireLocale } from "@/lib/i18n/locale";
-import { localeAlternates } from "@/lib/i18n/metadata";
+import { pageMetadata } from "@/lib/i18n/metadata";
 
 const PATH = "/o-nama";
 
@@ -15,11 +15,7 @@ export async function generateMetadata({
   const locale = requireLocale((await params).locale);
   const { dict } = getDictionary(locale);
 
-  return {
-    title: dict.aboutPage.meta.title,
-    description: dict.aboutPage.meta.description,
-    alternates: localeAlternates(locale, PATH),
-  };
+  return pageMetadata(locale, PATH, dict.aboutPage.meta, dict.meta.ogAlt);
 }
 
 export default async function ONamaPage({

@@ -1,5 +1,8 @@
 import { SITE } from "@/lib/site-config";
 
+/** Date of the last commit that changed page content (dictionaries.ts). Bump on every content change. */
+export const CONTENT_LAST_MODIFIED = "2026-09-15";
+
 export const SITEMAP_PAGES = [
   { path: "/", title: "Početna" },
   { path: "/o-nama", title: "O nama" },

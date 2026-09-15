@@ -29,11 +29,19 @@ export function localBusinessJsonLd(dict: Dictionary) {
     taxID: SITE.taxId,
     vatID: SITE.vatId,
     description: dict.meta.description,
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
+      streetAddress: LOCATION.streetAddress,
       addressLocality: LOCATION.area,
       addressRegion: LOCATION.city,
+      postalCode: LOCATION.postalCode,
       addressCountry: "ME",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: LOCATION.latitude,
+      longitude: LOCATION.longitude,
     },
     areaServed: {
       "@type": "City",

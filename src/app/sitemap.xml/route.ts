@@ -1,4 +1,4 @@
-import { SITEMAP_PAGES, sitemapUrl } from "@/lib/sitemap-pages";
+import { CONTENT_LAST_MODIFIED, SITEMAP_PAGES, sitemapUrl } from "@/lib/sitemap-pages";
 import { withLocale } from "@/lib/i18n/paths";
 
 export function GET() {
@@ -10,13 +10,15 @@ export function GET() {
 
     return `  <url>
     <loc>${cnrLoc}</loc>
-    <xhtml:link rel="alternate" hreflang="cnr" href="${cnrLoc}" />
+    <lastmod>${CONTENT_LAST_MODIFIED}</lastmod>
+    <xhtml:link rel="alternate" hreflang="sr-ME" href="${cnrLoc}" />
     <xhtml:link rel="alternate" hreflang="en" href="${enLoc}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${cnrLoc}" />
   </url>
   <url>
     <loc>${enLoc}</loc>
-    <xhtml:link rel="alternate" hreflang="cnr" href="${cnrLoc}" />
+    <lastmod>${CONTENT_LAST_MODIFIED}</lastmod>
+    <xhtml:link rel="alternate" hreflang="sr-ME" href="${cnrLoc}" />
     <xhtml:link rel="alternate" hreflang="en" href="${enLoc}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${cnrLoc}" />
   </url>`;
