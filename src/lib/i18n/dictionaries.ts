@@ -11,7 +11,7 @@ const cnr = {
     title: "D.A.J.M.I. - Auto servis, tehnički pregled, Škoda servis | Herceg Novi",
     description:
       "Auto servis, tehnički pregled i ovlašćeni Škoda servis u Herceg Novom. Dugogodišnja tradicija, originalni dijelovi i sertifikovani tehničari.",
-    ogAlt: "Ulaz u D.A.J.M.I. kompleks u Sutorini, Herceg Novi",
+    ogAlt: "D.A.J.M.I. Autocentar i Škoda servis u sumrak u Sutorini",
   },
   logoHome: "D.A.J.M.I. - početna",
   nav: {
@@ -611,7 +611,7 @@ const en = {
     title: "D.A.J.M.I. - Auto Service, Vehicle Inspection, Škoda Service | Herceg Novi",
     description:
       "Auto service, vehicle inspection and authorised Škoda service in Herceg Novi. Long-standing tradition, genuine parts and certified technicians.",
-    ogAlt: "Entrance to the D.A.J.M.I. complex in Sutorina, Herceg Novi",
+    ogAlt: "D.A.J.M.I. Autocentar and Škoda service at dusk in Sutorina",
   },
   logoHome: "D.A.J.M.I. - home",
   nav: {
