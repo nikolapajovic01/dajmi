@@ -153,8 +153,11 @@ const cnr = {
     },
     form: {
       title: "Pošaljite upit",
-      note: "Dugme otvara vaš email program sa popunjenom porukom.",
+      note: "Poruka stiže na info@dajmi.me. Odgovaramo u radnom vremenu.",
       unavailable: "Forma trenutno nije u funkciji. Pozovite nas ili pišite na email.",
+      success: "Hvala. Poruka je poslana. Javićemo se uskoro.",
+      error: "Slanje nije uspjelo. Pokušajte ponovo ili nas pozovite.",
+      sending: "Šaljemo...",
       name: "Ime i prezime",
       email: "Email",
       phone: "Telefon (opcionalno)",
@@ -165,7 +168,7 @@ const cnr = {
         inspection: "Tehnički pregled",
       },
       message: "Poruka",
-      submit: "Pošaljite email",
+      submit: "Pošaljite",
       subject: "Upit sa sajta D.A.J.M.I.",
     },
   },
@@ -480,7 +483,7 @@ const cnr = {
     kicker: "Pravno",
     title: "Politika privatnosti.",
     lead: "Samo ono što sajt stvarno radi. Nema analitičkih ni marketinških kolačića.",
-    updated: "Ažurirano 1. septembra 2026.",
+    updated: "Ažurirano 18. septembra 2026.",
     sections: [
       {
         heading: "Ko obrađuje podatke",
@@ -491,7 +494,7 @@ const cnr = {
       {
         heading: "Kontakt i upiti",
         body: [
-          "Kontakt forma na sajtu trenutno nije u funkciji. Upite šaljete pozivom ili emailom na objavljene brojeve i adrese: info@dajmi.me, servis@dajmi.me ili tehnickipregled@dajmi.me.",
+          "Kontakt forma šalje ime, email, telefon (ako ga unesete), odjeljenje i poruku na info@dajmi.me, preko Resend servisa. Te podatke koristimo samo da odgovorimo na upit.",
           "Ako nas pozovete ili pišete na objavljene brojeve i adrese, te poruke ostaju u našoj pošti i telefoniji dok ih ne riješimo i ne obrišemo.",
         ],
       },
@@ -753,8 +756,11 @@ const en = {
     },
     form: {
       title: "Send an enquiry",
-      note: "The button opens your email app with the message pre-filled.",
+      note: "Your message goes to info@dajmi.me. We reply during opening hours.",
       unavailable: "The form is temporarily unavailable. Call us or send an email.",
+      success: "Thank you. Your message was sent. We will get back to you soon.",
+      error: "Sending failed. Please try again or call us.",
+      sending: "Sending...",
       name: "Full name",
       email: "Email",
       phone: "Phone (optional)",
@@ -765,7 +771,7 @@ const en = {
         inspection: "Technical inspection",
       },
       message: "Message",
-      submit: "Send email",
+      submit: "Send",
       subject: "Enquiry from the D.A.J.M.I. website",
     },
   },
@@ -1080,7 +1086,7 @@ const en = {
     kicker: "Legal",
     title: "Privacy policy.",
     lead: "Only what this site actually does. No analytics or advertising cookies.",
-    updated: "Updated 1 September 2026.",
+    updated: "Updated 18 September 2026.",
     sections: [
       {
         heading: "Who processes the data",
@@ -1091,7 +1097,7 @@ const en = {
       {
         heading: "Contact and enquiries",
         body: [
-          "The contact form on the site is currently unavailable. Send enquiries by phone or email to the published numbers and addresses: info@dajmi.me, servis@dajmi.me or tehnickipregled@dajmi.me.",
+          "The contact form sends your name, email, phone (if provided), department and message to info@dajmi.me via the Resend service. We use that data only to reply to your enquiry.",
           "If you call or write to the published numbers and addresses, those messages stay in our mail and phone records until we resolve them and delete them.",
         ],
       },

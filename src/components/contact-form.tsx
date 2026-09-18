@@ -1,140 +1,147 @@
 "use client";
 
+import { useState } from "react";
 import {
-  CONTACTS,
   CONTACT_FORM_ENABLED,
-  EMAIL,
   ENQUIRY_DEPARTMENTS,
-  type EnquiryDepartment,
 } from "@/lib/site-config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
-function isEnquiryDepartment(value: string): value is EnquiryDepartment {
-  return (ENQUIRY_DEPARTMENTS as readonly string[]).includes(value);
-}
-
-function departmentMailto(key: EnquiryDepartment) {
-  const contact = CONTACTS.find((entry) => entry.key === key);
-  if (contact && "email" in contact) {
-    return contact.email.href;
-  }
-  return EMAIL.href;
-}
+type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm({ copy }: { copy: Dictionary["contactPage"]["form"] }) {
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [status, setStatus] = useState<FormStatus>("idle");
+
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!CONTACT_FORM_ENABLED) return;
+    if (!CONTACT_FORM_ENABLED || status === "submitting") return;
 
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const phone = String(data.get("phone") ?? "");
-    const message = String(data.get("message") ?? "");
-    const departmentValue = String(data.get("department") ?? "info");
-    const department = isEnquiryDepartment(departmentValue) ? departmentValue : "info";
-    const departmentLabel = copy.department[department];
+    const form = event.currentTarget;
+    setStatus("submitting");
 
-    const bodyLines = [
-      `${copy.name}: ${name}`,
-      `${copy.email}: ${email}`,
-      phone ? `${copy.phone}: ${phone}` : null,
-      `${copy.department.label}: ${departmentLabel}`,
-      "",
-      message,
-    ].filter((line) => line !== null);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: new FormData(form),
+      });
 
-    const subject = `${copy.subject} - ${departmentLabel}`;
-    const mailto = `${departmentMailto(department)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+      if (!response.ok) {
+        setStatus("error");
+        return;
+      }
 
-    // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- mailto: opens the user's email app, not an in-app route
-    window.location.href = mailto;
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5">
+    <form onSubmit={onSubmit} className="relative grid gap-5">
       <fieldset
-        disabled={!CONTACT_FORM_ENABLED}
+        disabled={!CONTACT_FORM_ENABLED || status === "submitting"}
         className="grid min-w-0 gap-5 border-0 p-0 disabled:cursor-not-allowed disabled:opacity-50"
       >
-      <div className="grid gap-5 min-[600px]:grid-cols-2">
+        <div className="grid gap-5 min-[600px]:grid-cols-2">
+          <label className="grid gap-2">
+            <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
+              {copy.name}
+            </span>
+            <input
+              type="text"
+              name="name"
+              required
+              autoComplete="name"
+              maxLength={120}
+              className="border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
+            />
+          </label>
+
+          <label className="grid gap-2">
+            <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
+              {copy.email}
+            </span>
+            <input
+              type="email"
+              name="email"
+              required
+              autoComplete="email"
+              maxLength={200}
+              className="border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
+            />
+          </label>
+        </div>
+
+        <div className="grid gap-5 min-[600px]:grid-cols-2">
+          <label className="grid gap-2">
+            <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
+              {copy.phone}
+            </span>
+            <input
+              type="tel"
+              name="phone"
+              autoComplete="tel"
+              maxLength={40}
+              className="border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
+            />
+          </label>
+
+          <label className="grid gap-2">
+            <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
+              {copy.department.label}
+            </span>
+            <select
+              name="department"
+              defaultValue="info"
+              required
+              className="border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
+            >
+              {ENQUIRY_DEPARTMENTS.map((key) => (
+                <option key={key} value={key}>
+                  {copy.department[key]}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
         <label className="grid gap-2">
           <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
-            {copy.name}
+            {copy.message}
           </span>
-          <input
-            type="text"
-            name="name"
+          <textarea
+            name="message"
             required
-            className="border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
+            rows={5}
+            maxLength={4000}
+            className="resize-none border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
           />
         </label>
 
-        <label className="grid gap-2">
-          <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
-            {copy.email}
-          </span>
-          <input
-            type="email"
-            name="email"
-            required
-            className="border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
-          />
-        </label>
-      </div>
+        <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0">
+          <label>
+            Company
+            <input type="text" name="company" tabIndex={-1} autoComplete="off" />
+          </label>
+        </div>
 
-      <div className="grid gap-5 min-[600px]:grid-cols-2">
-        <label className="grid gap-2">
-          <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
-            {copy.phone}
-          </span>
-          <input
-            type="tel"
-            name="phone"
-            className="border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
-          />
-        </label>
-
-        <label className="grid gap-2">
-          <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
-            {copy.department.label}
-          </span>
-          <select
-            name="department"
-            defaultValue="info"
-            required
-            className="border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
-          >
-            {ENQUIRY_DEPARTMENTS.map((key) => (
-              <option key={key} value={key}>
-                {copy.department[key]}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-
-      <label className="grid gap-2">
-        <span className="font-display text-[11px] font-semibold tracking-[0.18em] text-navy/70 uppercase">
-          {copy.message}
-        </span>
-        <textarea
-          name="message"
-          required
-          rows={5}
-          className="resize-none border border-navy/18 bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-navy-accent"
-        />
-      </label>
-
-      <button
-        type="submit"
-        className="mt-1 w-fit bg-navy px-8 py-[15px] text-center font-display text-sm font-semibold tracking-[0.04em] text-white transition-colors hover:bg-navy-accent disabled:pointer-events-none disabled:hover:bg-navy"
-      >
-        {copy.submit}
-      </button>
+        <button
+          type="submit"
+          className="mt-1 w-fit bg-navy px-8 py-[15px] text-center font-display text-sm font-semibold tracking-[0.04em] text-white transition-colors hover:bg-navy-accent disabled:pointer-events-none disabled:hover:bg-navy"
+        >
+          {status === "submitting" ? copy.sending : copy.submit}
+        </button>
       </fieldset>
-      <p className="text-[13px] leading-[1.6] text-grey">
-        {CONTACT_FORM_ENABLED ? copy.note : copy.unavailable}
+
+      <p className="text-[13px] leading-[1.6] text-grey" role="status" aria-live="polite">
+        {!CONTACT_FORM_ENABLED
+          ? copy.unavailable
+          : status === "success"
+            ? copy.success
+            : status === "error"
+              ? copy.error
+              : copy.note}
       </p>
     </form>
   );

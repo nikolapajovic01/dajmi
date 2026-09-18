@@ -9,7 +9,7 @@ export const SITE = {
 
 export const ENQUIRY_DEPARTMENTS = ["info", "service", "inspection"] as const;
 export type EnquiryDepartment = (typeof ENQUIRY_DEPARTMENTS)[number];
-export const CONTACT_FORM_ENABLED = false;
+export const CONTACT_FORM_ENABLED = true;
 
 export const PHONE = {
   display: "+382 31 670 240",
